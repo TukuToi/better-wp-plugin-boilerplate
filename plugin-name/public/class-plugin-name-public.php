@@ -99,4 +99,27 @@ class Plugin_Name_Public {
 
 	}
 
+	/**
+	 * Example Shortcode processing function.
+	 * Shortcode can take arguments like [plugin-name-shortcode argm='123']
+	 *
+	 * @since    1.0.0
+	 * @param    array $atts    ShortCode Attributes.
+	 */
+	public function plugin_name_shortcode_func( $atts ) {
+
+		$a = shortcode_atts(
+			array(
+				'argm' => '0',
+			),
+			$atts,
+			$this->plugin_name . '-shortcode'
+		);
+
+		return (
+		  $a['argm']
+		);
+
+	}
+
 }

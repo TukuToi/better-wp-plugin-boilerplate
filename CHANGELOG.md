@@ -8,6 +8,11 @@
 - Updated readme with proper example how to add larger code chunks to Plugin Readme.
 - Updated JS files comments to use `$( window ).on('load', function() {` instead of shorthand `$( window ).load(function() {`
 - Updated i18N class to i18n class so to be WPCS compliant.
+- Renamed functions outside of classes to be *prefixed* instead of *suffixed* with plugin_name, for compliance WP and codecanyon
+- Corrected some typos
+### Added
+- Added new ShortCode handler to work just like the add action and add filter handlers of WPPB
+
 
 * (3 July 2015). Flattened the folder structure so there is no .org repo parent folder.
 * (4 September 2014). Updating the `README` with Windows symbolic link instructions.
