@@ -10,6 +10,7 @@
 - Updated i18N class to i18n class so to be WPCS compliant.
 - Renamed functions outside of classes to be *prefixed* instead of *suffixed* with plugin_name, for compliance WP and codecanyon
 - Corrected some typos
+- Corrected Requires at least:, Tested up to: and Stable tag: in plugin readme.txt file
 ### Added
 - Added new ShortCode handler to work just like the add action and add filter handlers of WPPB
 - added @param $hook_suffix to admin_enqueue_scripts callbacks.
