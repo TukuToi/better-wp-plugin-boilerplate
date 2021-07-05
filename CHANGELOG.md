@@ -12,6 +12,7 @@
 - Corrected some typos
 ### Added
 - Added new ShortCode handler to work just like the add action and add filter handlers of WPPB
+- added @param $hook_suffix to admin_enqueue_scripts callbacks.
 
 
 * (3 July 2015). Flattened the folder structure so there is no .org repo parent folder.

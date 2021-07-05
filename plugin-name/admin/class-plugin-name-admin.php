@@ -57,8 +57,9 @@ class Plugin_Name_Admin {
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
+	 * @param string $hook_suffix The current admin page.
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles( $hook_suffix ) {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -80,8 +81,9 @@ class Plugin_Name_Admin {
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0
+	 * @param string $hook_suffix The current admin page.
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts( $hook_suffix ) {
 
 		/**
 		 * This function is provided for demonstration purposes only.
