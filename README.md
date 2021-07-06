@@ -3,6 +3,11 @@
 This is a Hard Fork of the original [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate), actively taking PRs and actively maintained, as well with more features than the original.
 A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
 
+A Generator Plugin to generate new Plugins by filling out a form is under development (first working development version os online). It can be accessed [here](https://github.com/TukuToi/tukutoi-plugin-generator) and acts like a WordPress Plugin.
+It can be used to generate a Plugin based on *any* boilerplate source really.
+
+The generator form will soon be online on a standalone website as well.
+
 ## Contents
 
 The WordPress Plugin Boilerplate includes the following files:
@@ -30,6 +35,8 @@ The Boilerplate can be installed directly into your plugins folder "as-is". You 
 * change `PLUGIN_NAME_` to `EXAMPLE_ME_`
 
 It's safe to activate the plugin at this point. Because the Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added until you write the code.
+
+Or, just use the [TukuToi Boilerplate Generator Plugin](https://github.com/TukuToi/tukutoi-plugin-generator), or the Webform (coming soon);
 
 ## WordPress.org Preparation
 
