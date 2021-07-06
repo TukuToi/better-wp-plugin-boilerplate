@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -32,6 +31,15 @@ class Plugin_Name_Admin {
 	private $plugin_name;
 
 	/**
+	 * The unique prefix of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $plugin_prefix    The string used to uniquely prefix technical functions of this plugin.
+	 */
+	private $plugin_prefix;
+
+	/**
 	 * The version of this plugin.
 	 *
 	 * @since    1.0.0
@@ -44,12 +52,14 @@ class Plugin_Name_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param      string $plugin_name       The name of this plugin.
+	 * @param      string $plugin_prefix    The unique prefix of this plugin.
+	 * @param      string $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct( $plugin_name, $plugin_prefix, $version ) {
 
-		$this->plugin_name = $plugin_name;
+		$this->plugin_name   = $plugin_name;
+		$this->plugin_prefix = $plugin_prefix;
 		$this->version = $version;
 
 	}
@@ -58,8 +68,9 @@ class Plugin_Name_Admin {
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
+	 * @param string $hook_suffix The current admin page.
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles( $hook_suffix ) {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -81,8 +92,9 @@ class Plugin_Name_Admin {
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0
+	 * @param string $hook_suffix The current admin page.
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts( $hook_suffix ) {
 
 		/**
 		 * This function is provided for demonstration purposes only.

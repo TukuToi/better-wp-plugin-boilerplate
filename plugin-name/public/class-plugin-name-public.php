@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -32,6 +31,15 @@ class Plugin_Name_Public {
 	private $plugin_name;
 
 	/**
+	 * The unique prefix of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $plugin_prefix    The string used to uniquely prefix technical functions of this plugin.
+	 */
+	private $plugin_prefix;
+
+	/**
 	 * The version of this plugin.
 	 *
 	 * @since    1.0.0
@@ -44,12 +52,14 @@ class Plugin_Name_Public {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param      string $plugin_name      The name of the plugin.
+	 * @param      string $plugin_prefix          The unique prefix of this plugin.
+	 * @param      string $version          The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct( $plugin_name, $plugin_prefix, $version ) {
 
-		$this->plugin_name = $plugin_name;
+		$this->plugin_name   = $plugin_name;
+		$this->plugin_prefix = $plugin_prefix;
 		$this->version = $version;
 
 	}
@@ -97,6 +107,29 @@ class Plugin_Name_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
+
+	}
+
+	/**
+	 * Example Shortcode processing function.
+	 * Shortcode can take arguments like [plugin-name-shortcode argm='123']
+	 *
+	 * @since    1.0.0
+	 * @param    array $atts    ShortCode Attributes.
+	 */
+	public function plugin_name_shortcode_func( $atts ) {
+
+		$a = shortcode_atts(
+			array(
+				'argm' => '0',
+			),
+			$atts,
+			$this->plugin_name . '-shortcode'
+		);
+
+		return (
+		  $a['argm']
+		);
 
 	}
 

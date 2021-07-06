@@ -1,5 +1,6 @@
-# WordPress Plugin Boilerplate
+# Better WordPress Plugin Boilerplate
 
+This is a Hard Fork of the original [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate), actively taking PRs and actively maintained, as well with more features than the original.
 A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
 
 ## Contents
@@ -80,20 +81,16 @@ The example code provided shows how to register your hooks with the Loader class
 
 ### What About Other Features?
 
-The previous version of the WordPress Plugin Boilerplate included support for a number of different projects such as the [GitHub Updater](https://github.com/afragen/github-updater).
-
-These tools are not part of the core of this Boilerplate, as I see them as being additions, forks, or other contributions to the Boilerplate.
-
-The same is true of using tools like Grunt, Composer, etc. These are all fantastic tools, but not everyone uses them. In order to  keep the core Boilerplate as light as possible, these features have been removed and will be introduced in other editions, and will be listed and maintained on the project homepage.
+Submit your idea to the [Discussions](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) for the community to approve, or submit a PR, if you have code ready. Note that we may or may not merge the code and may or may not add features discussed at our own will.
 
 # Credits
 
 The WordPress Plugin Boilerplate was started in 2011 by [Tom McFarlin](http://twitter.com/tommcfarlin/) and has since included a number of great contributions. In March of 2015 the project was handed over by Tom to Devin Vinson.
 
-The current version of the Boilerplate was developed in conjunction with [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
+The version of which the the **Better** WordPress Plugin Boilerplate hard-fork was taken was developed in conjunction with [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
 
-The homepage is based on a design as provided by [HTML5Up](http://html5up.net), the Boilerplate logo was designed by Rob McCaskill of [BungaWeb](http://bungaweb.com), and the site `favicon` was created by [Mickey Kay](https://twitter.com/McGuive7).
+From 2021-07-5 (July 05th 2021) onwards , the **Better** WordPress Plugin Boilerplate is maintained by [TukuToi](https://www.tukutoi.com/) and the active community.
 
 ## Documentation, FAQs, and More
 
-If you’re interested in writing any documentation or creating tutorials please [let me know](http://devinvinson.com/contact/) .
+If you’re interested in writing any documentation or creating tutorials please let's discuss in the [Discussions section](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) of this Repo.
