@@ -48,6 +48,15 @@ class Plugin_Name {
 	protected $plugin_name;
 
 	/**
+	 * The unique prefix of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      string    $plugin_prefix    The string used to uniquely prefix technical functions of this plugin.
+	 */
+	protected $plugin_prefix;
+
+	/**
 	 * The current version of the plugin.
 	 *
 	 * @since    1.0.0
@@ -72,6 +81,7 @@ class Plugin_Name {
 			$this->version = '1.0.0';
 		}
 		$this->plugin_name = 'plugin-name';
+		$this->plugin_prefix = 'pfx_';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -151,7 +161,7 @@ class Plugin_Name {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Plugin_Name_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Plugin_Name_Admin( $this->get_plugin_name(), $this->get_plugin_prefix(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -167,7 +177,7 @@ class Plugin_Name {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Plugin_Name_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Plugin_Name_Public( $this->get_plugin_name(), $this->get_plugin_prefix(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -194,6 +204,16 @@ class Plugin_Name {
 	 */
 	public function get_plugin_name() {
 		return $this->plugin_name;
+	}
+
+	/**
+	 * The unique prefix of the plugin used to uniquely prefix technical functions.
+	 *
+	 * @since     1.0.0
+	 * @return    string    The prefix of the plugin.
+	 */
+	public function get_plugin_prefix() {
+		return $this->plugin_prefix;
 	}
 
 	/**

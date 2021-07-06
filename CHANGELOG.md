@@ -1,8 +1,9 @@
 # Changelog
 
-## 2021-07-5
+## 2021-07-6
 ### Added
 - Added ability to remove actions and filters added by this plugin.
+- Added unique plugin prefix used to prefix technical functions.
 
 ## 2021-07-5
 ### Changed
