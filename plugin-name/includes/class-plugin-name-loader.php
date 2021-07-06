@@ -91,6 +91,58 @@ class Plugin_Name_Loader {
 	}
 
 	/**
+	 * Remove a filter from the collection registered with WordPress.
+	 *
+	 * @since    1.0.0
+	 * @param    string $tag              The filter hook to which the function to be removed is hooked.
+	 * @param    string $class_name       Class name registering the filter callback.
+	 * @param    string $method_to_remove Method name for the filter's callback.
+	 * @param    int    $priority         The priority of the method (default 10).
+	 *
+	 * @return   $removed bool Whether the function is removed.
+	 */
+	public function remove_filter( $tag, $class_name = '', $method_to_remove = '', $priority = 10 ) {
+
+		global $wp_filter;
+		$removed = false;
+
+		foreach ( $wp_filter[ $tag ]->callbacks as $filter_priority => $filters ) {
+
+			if ( $filter_priority == $priority ) {
+
+				foreach ( $filters as $filter ) {
+
+					if ( $filter['function'][1] == $method_to_remove
+						&& is_object( $filter['function'][0] ) // only WP 4.7 and above. This plugin is requiring at least WP 4.9.
+						&& $filter['function'][0] instanceof $class_name ) {
+						$removed = $wp_filter[ $tag ]->remove_filter( $tag, array( $filter['function'][0], $method_to_remove ), $priority );
+					}
+				}
+			}
+		}
+
+		return $removed;
+
+	}
+
+	/**
+	 * Remove an action from the collection registered with WordPress.
+	 *
+	 * @since    1.0.0
+	 * @param    string $tag              The filter hook to which the function to be removed is hooked.
+	 * @param    string $class_name       Class name registering the filter callback.
+	 * @param    string $method_to_remove Method name for the filter's callback.
+	 * @param    int    $priority         The priority of the method (default 10).
+	 *
+	 * @return   $removed bool Whether the function is removed.
+	 */
+	public function remove_action( $tag, $class_name = '', $method_to_remove = '', $priority = 10 ) {
+
+		return $this->remove_filter( $tag, $class_name, $method_to_remove, $priority );
+
+	}
+
+	/**
 	 * Add a new shortcode to the collection to be registered with WordPress
 	 *
 	 * @since     1.0.0

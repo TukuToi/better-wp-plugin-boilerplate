@@ -1,6 +1,10 @@
 # Changelog
 
 ## 2021-07-5
+### Added
+- Added ability to remove actions and filters added by this plugin.
+
+## 2021-07-5
 ### Changed
 - Updated Readme.md.
 - Updated all files to follow 100% WPCS.
