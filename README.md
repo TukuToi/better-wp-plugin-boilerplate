@@ -87,10 +87,10 @@ Submit your idea to the [Discussions](https://github.com/TukuToi/better-wp-plugi
 
 The WordPress Plugin Boilerplate was started in 2011 by [Tom McFarlin](http://twitter.com/tommcfarlin/) and has since included a number of great contributions. In March of 2015 the project was handed over by Tom to Devin Vinson.
 
-The version of which this hard fork was taken was developed in conjunction with [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
+The version of which the the **Better** WordPress Plugin Boilerplate hard-fork was taken was developed in conjunction with [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
 
-From here on, the **Better** WordPress Plugin Boilerplate is maintained by [TukuToi](https://www.tukutoi.com/) and the active community.
+From 2021-07-5 (July 05th 2021) onwards , the **Better** WordPress Plugin Boilerplate is maintained by [TukuToi](https://www.tukutoi.com/) and the active community.
 
 ## Documentation, FAQs, and More
 
-If you’re interested in writing any documentation or creating tutorials please [let us know](https://www.tukutoi.com/contact-form/) .
+If you’re interested in writing any documentation or creating tutorials please let's discuss in the [Discussions section](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) of this Repo.
