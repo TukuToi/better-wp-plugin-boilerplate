@@ -1,3 +1,5 @@
+![GitHub contributors](https://img.shields.io/github/contributors/TukuToi/better-wp-plugin-boilerplate) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/TukuToi/better-wp-plugin-boilerplate) ![GitHub last commit](https://img.shields.io/github/last-commit/TukuToi/better-wp-plugin-boilerplate) ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/TukuToi/better-wp-plugin-boilerplate)
+
 # Better WordPress Plugin Boilerplate
 
 This is a Hard Fork of the original [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate).
