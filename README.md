@@ -61,3 +61,6 @@ The WordPress Plugin Boilerplate was started in 2011 by [Tom McFarlin](http://tw
 The version of which the the **Better** WordPress Plugin Boilerplate hard-fork was taken was developed in conjunction with [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
 
 From 2021-07-5 (July 05th 2021) onwards , the **Better** WordPress Plugin Boilerplate is maintained by [TukuToi](https://www.tukutoi.com/) and the active community.
+We hard-forked the project (which means GitHub has detached the fork and made it a standalone project) because the current development on the existing Boilerplate Repo is stalling since several years, and things started to get oudated (and that won't get any better with time to go by). 
+
+We saw an opportunity here to continue a great project and develop it further, also with great ideas of the community itself.
