@@ -19,7 +19,11 @@ The generator form will soon be online on a standalone website as well.
 
 ## How to Create a Plugin
 
-The Boilerplate can be installed directly into your plugins folder "as-is". You will want to rename it and the classes and methods inside of it to fit your needs. 
+The Better WordPress Plugin Boilerplate (everything *inside and inclusive* the folder `plugin-name` of this repo) can be installed directly into your plugins folder "as-is". 
+
+You will want to rename it and the classes and methods inside of it to fit your needs. 
+Some comments inside the Boilerplate may need to be rewritten as well, and adapted to your code/use case.
+
 For example, if your plugin is named 'example-me' then:
 
 * rename files from `plugin-name` to `example-me`
@@ -28,9 +32,10 @@ For example, if your plugin is named 'example-me' then:
 * change `Plugin_Name` to `Example_Me`
 * change `PLUGIN_NAME_` to `EXAMPLE_ME_`
 
-It's safe to activate the plugin at this point. Because the Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added until you write the code.
+It's safe to activate the plugin at this point. 
+Because the Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added until you write the code, of course.
 
-Or, just use the [TukuToi Boilerplate Generator Plugin](https://github.com/TukuToi/tukutoi-plugin-generator), or the Webform (coming soon), to generate a starter plate using your file, class, method names and prefixes.
+For simplicity, you can just use the [TukuToi Boilerplate Generator Plugin](https://github.com/TukuToi/tukutoi-plugin-generator), or the Webform (coming soon), to generate a starter plate using your file-, class-, method- names (and prefixes, authorname, etc etc).
 
 ## Submit a Plugin to WordPress.org
 
