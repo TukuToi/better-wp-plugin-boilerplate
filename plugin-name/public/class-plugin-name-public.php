@@ -12,8 +12,9 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
+ * Defines the plugin name, version, and two hooks to
  * enqueue the public-facing stylesheet and JavaScript.
+ * As you add hooks and methods, update this description.
  *
  * @package    Plugin_Name
  * @subpackage Plugin_Name/public
@@ -71,18 +72,6 @@ class Plugin_Name_Public {
 	 */
 	public function enqueue_styles() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Plugin_Name_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Plugin_Name_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-public.css', array(), $this->version, 'all' );
 
 	}
@@ -94,25 +83,13 @@ class Plugin_Name_Public {
 	 */
 	public function enqueue_scripts() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Plugin_Name_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Plugin_Name_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, true );
 
 	}
 
 	/**
 	 * Example Shortcode processing function.
-	 * Shortcode can take arguments like [plugin-name-shortcode argm='123']
+	 * Shortcode can take attributes like [plugin-name-shortcode attribute='123']
 	 *
 	 * @since    1.0.0
 	 * @param    array $atts    ShortCode Attributes.
@@ -121,15 +98,17 @@ class Plugin_Name_Public {
 
 		$a = shortcode_atts(
 			array(
-				'argm' => '0',
+				'attribute' => '0',
 			),
 			$atts,
-			$this->plugin_name . '-shortcode'
+			$this->plugin_prefix . 'shortcode'
 		);
 
-		return (
-		  $a['argm']
-		);
+		// Build our output.
+		$out = $a['attribute'];
+
+		// ShortCodes are filters and should always return, never echo.
+		return $out;
 
 	}
 

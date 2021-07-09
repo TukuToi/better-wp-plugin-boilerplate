@@ -2,7 +2,7 @@
 /**
  * The plugin bootstrap file
  *
- * This file is read by WordPress to generate the plugin information in the plugin
+ * This file is read by WordPress or ClassicPress to generate the plugin information in the plugin
  * admin area. This file also includes all of the dependencies used by the plugin,
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
@@ -12,11 +12,11 @@
  * @package           Plugin_Name
  *
  * @wordpress-plugin
- * Plugin Name:       Better WordPress Plugin Boilerplate
+ * Plugin Name:       Plugin Name
  * Plugin URI:        http://example.com/plugin-name-uri/
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
- * Author:            Your Name or Your Company
+ * Author:            Your Name or Your Company Name
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -38,7 +38,9 @@ define( 'PLUGIN_NAME_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
+ *
  * This action is documented in includes/class-plugin-name-activator.php
+ * Full security checks are performed inside the class.
  */
 function plugin_name_activate() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
@@ -47,7 +49,9 @@ function plugin_name_activate() {
 
 /**
  * The code that runs during plugin deactivation.
+ *
  * This action is documented in includes/class-plugin-name-deactivator.php
+ * Full security checks are performed inside the class.
  */
 function plugin_name_deactivate() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
@@ -69,6 +73,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  * Since everything within the plugin is registered via hooks,
  * kicking off the plugin from this point in the file does
  * not affect the page life cycle.
+ *
+ * Generally you will want to hook this function, instead of callign it globally.
+ * However since the purpose of your plugin is not known until you write it, we include the function globally.
  *
  * @since    1.0.0
  */

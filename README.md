@@ -45,7 +45,7 @@ For simplicity, you can just use the [TukuToi Boilerplate Generator Plugin](http
 
 [Comin soon] instructions and example folder boilerplate to use when submitting a plugin to WordPress.
 
-# What About New Features?
+# What About Contributing?
 
 Submit your idea to the [Discussions](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) for the community to approve. Each Idea needs at least 2 distinct thumbs up (*additional* to the OP) to be considered for implemenation. 
 
@@ -53,6 +53,9 @@ Additionally to the Discussions Post, if you have working code to implement your
 PR'd ideas still need at least 2 additional thumbs up in the Discussion post to be merged. 
 
 Note that in special cases (security, quality, yada yada) we may or may not merge the code and may or may not add or remove features discussed at our own will, independent from the amoung of thumbsup.
+
+The Better WordPress Plugin Boilerplate follows PHP, WP Coding standards and has the Git Actions for it incorporated.
+We also follow [Keep A Changelog](https://keepachangelog.com/en/1.0.0/) for changelogs and [SemVer](https://semver.org/) for Versioning.
 
 ## Documentation, FAQs, and More
 
