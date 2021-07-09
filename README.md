@@ -3,8 +3,10 @@
 # Better WordPress Plugin Boilerplate
 
 This is a Hard Fork of the original [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate).
-The **Better**) WordPress Plugin Boilerplate actively takes PRs and is maintained and under active development, as well has more features than the original.
-The goal is still a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
+The **Better** WordPress Plugin Boilerplate actively takes PRs and is maintained and under active development, as well has more features than the original.
+The goal is still a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins, however actively accepting cooperations, and also considering ClassicPress Compatibility.
+
+In the case ClassicPress and WordPress diverge too much in future we will consider creating a new, standalone repo just for ClassicPress. However as it stands of today, 2021-07-9 (9th July 2021) the Codebase of both CMS are still compliant.
 
 A Generator Plugin to generate new Plugins by filling out a form is available [here](https://github.com/TukuToi/tukutoi-plugin-generator) and acts like a WordPress Plugin.
 It can be used to *generate* a Plugin based on *any* boilerplate source really, but uses by default the Better WordPress Plugin Boilerplate.
@@ -45,11 +47,12 @@ For simplicity, you can just use the [TukuToi Boilerplate Generator Plugin](http
 
 # What About New Features?
 
-Submit your idea to the [Discussions](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) for the community to approve. each Idea needs at least 2 distinct thumbs up (*additional* to the OP) to be considered for implemenation. 
-Additionally to the Discussions Post, if you have working code to implement your Idea, please add a PR.
+Submit your idea to the [Discussions](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) for the community to approve. Each Idea needs at least 2 distinct thumbs up (*additional* to the OP) to be considered for implemenation. 
+
+Additionally to the Discussions Post, if you have working code to implement your Idea, please add a PR **to the develop branch**.
 PR'd ideas still need at least 2 additional thumbs up in the Discussion post to be merged. 
 
-Note that in special cases (security, yada yada) we may or may not merge the code and may or may not add or remove features discussed at our own will, independent from the amoung of thumbsup.
+Note that in special cases (security, quality, yada yada) we may or may not merge the code and may or may not add or remove features discussed at our own will, independent from the amoung of thumbsup.
 
 ## Documentation, FAQs, and More
 

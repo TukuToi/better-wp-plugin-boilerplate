@@ -1,8 +1,13 @@
 # Changelog
 
+## 2021-07-9
+### Added
+- PHPCS and WPCS GitHub Actions (to the main repo)
+- Updated readme of main repo
+
 ## 2021-07-6
 ### Added
-- Added ability to remove actions and filters added by this plugin.
+- Added ability to remove actions and filters added by the plugin.
 - Added unique plugin prefix used to prefix technical functions.
 
 ## 2021-07-5
