@@ -18,6 +18,9 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
+ * @todo Justify why we need this or remove it. AFAIK nothing can be done with textdomains else than loading it.
+ *       This, if true, makes this class a total waste of code.
+ *
  * @since      1.0.0
  * @package    Plugin_Name
  * @subpackage Plugin_Name/includes

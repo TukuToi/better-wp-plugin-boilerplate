@@ -1,8 +1,20 @@
 # Changelog
 
+## 2021-07-14
+### Changed
+- Use Strict comparison instead of loose comparison
+- Some alignement of signs fixed to satisfy PHPCS GitHub action
+- Verify WP Nonce when deactivating a Plugin
+- Some space alignements in multiline conditions adjusted
+
+## 2021-07-9
+### Added
+- PHPCS and WPCS GitHub Actions (to the main repo)
+- Updated readme of main repo
+
 ## 2021-07-6
 ### Added
-- Added ability to remove actions and filters added by this plugin.
+- Added ability to remove actions and filters added by the plugin.
 - Added unique plugin prefix used to prefix technical functions.
 
 ## 2021-07-5

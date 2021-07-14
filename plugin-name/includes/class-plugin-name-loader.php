@@ -137,9 +137,7 @@ class Plugin_Name_Loader {
 	 * @return   $removed bool Whether the function is removed.
 	 */
 	public function remove_action( $tag, $class_name = '', $method_to_remove = '', $priority = 10 ) {
-
 		return $this->remove_filter( $tag, $class_name, $method_to_remove, $priority );
-
 	}
 
 	/**
