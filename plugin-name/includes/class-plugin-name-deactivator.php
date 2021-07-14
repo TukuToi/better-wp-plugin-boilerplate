@@ -38,7 +38,7 @@ class Plugin_Name_Deactivator {
 	 * @access   private
 	 * @var      string    $plugin    The $_REQUEST['plugin'] value during plugin activation.
 	 */
-	private static $plugin  = 'plugin-name/plugin-name.php';
+	private static $plugin = 'plugin-name/plugin-name.php';
 
 	/**
 	 * The $_REQUEST['action'] during plugin activation.
@@ -47,7 +47,7 @@ class Plugin_Name_Deactivator {
 	 * @access   private
 	 * @var      array    $action    The $_REQUEST[action] value during plugin activation.
 	 */
-	private static $action  = 'deactivate';
+	private static $action = 'deactivate';
 
 	/**
 	 * Activate the plugin.
@@ -63,7 +63,7 @@ class Plugin_Name_Deactivator {
 			|| false === self::validate_request( self::$plugin, self::$action )
 			|| false === self::check_caps()
 			|| ! check_admin_referer( 'deactivate-plugin_' . self::$request['plugin'] )
-		 ) {
+		) {
 
 			exit;
 
@@ -87,24 +87,22 @@ class Plugin_Name_Deactivator {
 	 */
 	private static function get_request() {
 
-		if ( ! empty( $_REQUEST ) ) {
+		if ( ! empty( $_REQUEST )
+			&& isset( $_REQUEST['_wpnonce'] )
+			&& isset( $_REQUEST['plugin'] )
+			&& isset( $_REQUEST['action'] )
+			&& wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'deactivate-plugin_' . sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) ) )
+		) {
 
-			if ( isset( $_REQUEST['plugin'] )
-				&& isset( $_REQUEST['action'] ) ) {
+			self::$request['plugin'] = sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) );
+			self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
 
-				self::$request['plugin'] = sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) );
-				self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
+			return self::$request;
 
-				return self::$request;
+		} else {
 
-			} else {
-
-				return false;
-
-			}
+			return false;
 		}
-
-		return false;
 
 	}
 

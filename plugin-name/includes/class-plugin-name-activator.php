@@ -63,7 +63,7 @@ class Plugin_Name_Activator {
 			|| false === self::validate_request( self::$plugin, self::$action )
 			|| false === self::check_caps()
 			|| ! check_admin_referer( 'activate-plugin_' . self::$request['plugin'] )
-		 ) {
+		) {
 
 			exit;
 
@@ -87,24 +87,22 @@ class Plugin_Name_Activator {
 	 */
 	private static function get_request() {
 
-		if ( ! empty( $_REQUEST ) ) {
+		if ( ! empty( $_REQUEST )
+			&& isset( $_REQUEST['_wpnonce'] )
+			&& isset( $_REQUEST['plugin'] )
+			&& isset( $_REQUEST['action'] )
+			&& wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'deactivate-plugin_' . sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) ) )
+		) {
 
-			if ( isset( $_REQUEST['plugin'] )
-				&& isset( $_REQUEST['action'] ) ) {
+			self::$request['plugin'] = sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) );
+			self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
 
-				self::$request['plugin'] = sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) );
-				self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
+			return self::$request;
 
-				return self::$request;
+		} else {
 
-			} else {
-
-				return false;
-
-			}
+			return false;
 		}
-
-		return false;
 
 	}
 

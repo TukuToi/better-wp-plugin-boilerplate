@@ -1,5 +1,12 @@
 # Changelog
 
+## 2021-07-14
+### Changed
+- Use Strict comparison instead of loose comparison
+- Some alignement of signs fixed to satisfy PHPCS GitHub action
+- Verify WP Nonce when deactivating a Plugin
+- Some space alignements in multiline conditions adjusted
+
 ## 2021-07-9
 ### Added
 - PHPCS and WPCS GitHub Actions (to the main repo)
