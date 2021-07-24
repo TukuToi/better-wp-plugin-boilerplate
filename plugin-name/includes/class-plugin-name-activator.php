@@ -91,7 +91,7 @@ class Plugin_Name_Activator {
 			&& isset( $_REQUEST['_wpnonce'] )
 			&& isset( $_REQUEST['plugin'] )
 			&& isset( $_REQUEST['action'] )
-			&& wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'deactivate-plugin_' . sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) ) )
+			&& wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'activate-plugin_' . sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) ) )
 		) {
 
 			self::$request['plugin'] = sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) );

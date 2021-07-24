@@ -1,5 +1,10 @@
 # Changelog
 
+## 2021-07-24
+### Fixed
+- Fixed wrong usage of deactivate-plugin_ wp_nonce prefix instead of activate-plugin_
+
+
 ## 2021-07-14
 ### Changed
 - Use Strict comparison instead of loose comparison
