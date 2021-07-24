@@ -2,7 +2,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://example.com
+ * @link       https://example.com
  * @since      1.0.0
  *
  * @package    Plugin_Name

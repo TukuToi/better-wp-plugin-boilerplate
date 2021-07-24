@@ -1,12 +1,12 @@
-=== Better WordPress Plugin Boilerplate ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: http://example.com/
+=== Plugin Human Name ===
+Contributors: Your Name or Your Company Name
+Donate link: https://donate.tld/
 Tags: comments, spam
 Requires at least: 4.9
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: 1.0.0
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
 
@@ -102,10 +102,10 @@ Unordered list:
 * something else
 * third thing
 
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
+Here's a link to [WordPress](https://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
 Titles are optional, naturally.
 
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
+[markdown syntax]: https://daringfireball.net/projects/markdown/syntax
             "Markdown is what the parser uses to process much of the readme file"
 
 Markdown uses email style notation for blockquotes and I've been told:
