@@ -88,24 +88,52 @@ class Plugin_Name_Public {
 	}
 
 	/**
-	 * Example Shortcode processing function.
+	 * Example of Shortcode processing function.
+	 *
 	 * Shortcode can take attributes like [plugin-name-shortcode attribute='123']
+	 * Shortcodes can be enclosing content [plugin-name-shortcode attribute='123']custom content[/plugin-name-shortcode].
+	 *
+	 * @see https://developer.wordpress.org/plugins/shortcodes/enclosing-shortcodes/
 	 *
 	 * @since    1.0.0
-	 * @param    array $atts    ShortCode Attributes.
+	 * @param    array  $atts    ShortCode Attributes.
+	 * @param    mixed  $content ShortCode enclosed content.
+	 * @param    string $tag    The Shortcode tag.
 	 */
-	public function plugin_name_shortcode_func( $atts ) {
+	public function plugin_name_shortcode_func( $atts, $content = null, $tag ) {
 
-		$a = shortcode_atts(
+		/**
+		 * Combine user attributes with known attributes.
+		 *
+		 * @see https://developer.wordpress.org/reference/functions/shortcode_atts/
+		 *
+		 * Pass third paramter $shortcode to enable ShortCode Attribute Filtering.
+		 * @see https://developer.wordpress.org/reference/hooks/shortcode_atts_shortcode/
+		 */
+		$atts = shortcode_atts(
 			array(
-				'attribute' => '0',
+				'attribute' => 123,
 			),
 			$atts,
 			$this->plugin_prefix . 'shortcode'
 		);
 
-		// Build our output.
-		$out = $a['attribute'];
+		/**
+		 * Build our ShortCode output.
+		 * Remember to sanitize all user input.
+		 * In this case, we expect a integer value to be passed to the ShortCode attribute.
+		 *
+		 * @see https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/
+		 */
+		$out = intval( $atts['attribute'] );
+
+		/**
+		 * If the shortcode is enclosing, we may want to do something with $content
+		 */
+		if ( ! is_null( $content ) && ! empty( $content ) ) {
+			$out = do_shortcode( $content );// We can parse shortcodes inside $content.
+			$out = intval( $atts['attribute'] ) . ' ' . sanitize_text_field( $out );// Remember to sanitize your user input.
+		}
 
 		// ShortCodes are filters and should always return, never echo.
 		return $out;
