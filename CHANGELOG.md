@@ -6,6 +6,10 @@
 - Fixed wrong usage shortcode prefix when registering shortcode. Props @anwas, https://github.com/TukuToi/better-wp-plugin-boilerplate/pull/6
 ### Added 
 - Added complete ShortCode example
+### Fixed 
+- use https instead of https in placeholder
+- fixed some dummy placeholders to work with the TukuToi Plugin Generator
+- updated "Tested up to" version
 
 
 ## 2021-07-14
