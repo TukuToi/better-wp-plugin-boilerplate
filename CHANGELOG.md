@@ -4,6 +4,8 @@
 ### Fixed
 - Fixed wrong usage of deactivate-plugin_ wp_nonce prefix instead of activate-plugin_
 - Fixed wrong usage shortcode prefix when registering shortcode. Props @anwas, https://github.com/TukuToi/better-wp-plugin-boilerplate/pull/6
+### Added 
+- Added complete ShortCode example
 
 
 ## 2021-07-14
