@@ -1,5 +1,12 @@
 # Changelog
 
+## 2021-08-09
+### Fixed
+- Fixed problem where plugin couldn't be activated in bulk
+- Fixed problem where plugin couldn't be deactivated in bulk
+### Added
+- Proper PHP Headings (`Requires at least:` and `Tested up to:`)
+
 ## 2021-07-24
 ### Fixed
 - Fixed wrong usage of deactivate-plugin_ wp_nonce prefix instead of activate-plugin_
