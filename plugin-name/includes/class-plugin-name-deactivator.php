@@ -60,18 +60,23 @@ class Plugin_Name_Deactivator {
 	public static function deactivate() {
 
 		if ( false === self::get_request()
-			|| false === self::validate_request( self::$plugin, self::$action )
+			|| false === self::validate_request( self::$plugin )
 			|| false === self::check_caps()
-			|| ! check_admin_referer( 'deactivate-plugin_' . self::$request['plugin'] )
 		) {
-
-			exit;
-
+			if ( isset( $_REQUEST['plugin'] ) ) {
+				if ( ! check_admin_referer( 'deactivate-plugin_' . self::$request['plugin'] ) ) {
+					exit;
+				}
+			} elseif ( isset( $_REQUEST['checked'] ) ) {
+				if ( ! check_admin_referer( 'bulk-plugins' ) ) {
+					exit;
+				}
+			}
 		}
 
 		/**
-		 * The plugin is now safely activated.
-		 * Perform your activation actions here.
+		 * The plugin is now safely deactivated.
+		 * Perform your deactivation actions here.
 		 */
 
 	}
@@ -89,16 +94,27 @@ class Plugin_Name_Deactivator {
 
 		if ( ! empty( $_REQUEST )
 			&& isset( $_REQUEST['_wpnonce'] )
-			&& isset( $_REQUEST['plugin'] )
 			&& isset( $_REQUEST['action'] )
-			&& wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'deactivate-plugin_' . sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) ) )
 		) {
+			if ( isset( $_REQUEST['plugin'] ) ) {
+				if ( false !== wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'deactivate-plugin_' . sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) ) ) ) {
 
-			self::$request['plugin'] = sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) );
-			self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
+					self::$request['plugin'] = sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) );
+					self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
 
-			return self::$request;
+					return self::$request;
 
+				}
+			} elseif ( isset( $_REQUEST['checked'] ) ) {
+				if ( false !== wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'bulk-plugins' ) ) {
+
+					self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
+					self::$request['plugins'] = array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['checked'] ) );
+
+					return self::$request;
+
+				}
+			}
 		} else {
 
 			return false;
@@ -113,17 +129,20 @@ class Plugin_Name_Deactivator {
 	 *
 	 * @since    1.0.0
 	 * @param string $plugin The Plugin folder/name.php.
-	 * @param string $action The action we expect.
 	 * @return bool false if either plugin or action does not match, else true.
 	 */
-	private static function validate_request( $plugin, $action ) {
+	private static function validate_request( $plugin ) {
 
 		if ( $plugin === self::$request['plugin']
-			&& $action === self::$request['action']
+			&& 'deactivate' === self::$request['action']
 		) {
 
 			return true;
 
+		} elseif ( 'deactivate-selected' === self::$request['action']
+			&& in_array( $plugin, self::$request['plugins'] )
+		) {
+			return true;
 		}
 
 		return false;
