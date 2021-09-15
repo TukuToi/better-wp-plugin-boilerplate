@@ -38,7 +38,7 @@ class Plugin_Name_Activator {
 	 * @access   private
 	 * @var      string    $plugin    The $_REQUEST['plugin'] value during plugin activation.
 	 */
-	private static $plugin  = PLUGIN_NAME_BASE_NAME;
+	private static $plugin = PLUGIN_NAME_BASE_NAME;
 
 	/**
 	 * Activate the plugin.
