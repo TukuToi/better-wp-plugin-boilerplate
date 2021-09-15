@@ -41,15 +41,6 @@ class Plugin_Name_Deactivator {
 	private static $plugin = PLUGIN_NAME_BASE_NAME;
 
 	/**
-	 * The $_REQUEST['action'] during plugin activation.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      array    $action    The $_REQUEST[action] value during plugin activation.
-	 */
-	private static $action = 'deactivate';
-
-	/**
 	 * Activate the plugin.
 	 *
 	 * Checks if the plugin was (safely) activated.
