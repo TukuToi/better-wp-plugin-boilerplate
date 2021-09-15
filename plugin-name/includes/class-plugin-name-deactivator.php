@@ -38,7 +38,7 @@ class Plugin_Name_Deactivator {
 	 * @access   private
 	 * @var      string    $plugin    The $_REQUEST['plugin'] value during plugin activation.
 	 */
-	private static $plugin = 'plugin-name/plugin-name.php';
+	private static $plugin = PLUGIN_NAME_BASE_NAME;
 
 	/**
 	 * The $_REQUEST['action'] during plugin activation.

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2021-09-15
+### Changed
+- Removed uninstall.php file and added uninstall hook with class instead. Allows for dynamic plugin name retrieval during unistall
+- Added SonarCloud Scanning for code quality
+
 ## 2021-08-09
 ### Fixed
 - Fixed problem where plugin couldn't be activated in bulk

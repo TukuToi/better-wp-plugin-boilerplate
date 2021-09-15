@@ -1,6 +1,6 @@
 <?php
 /**
- * Fired during plugin activation
+ * Fired during plugin uninstall
  *
  * @link       https://example.com
  * @since      1.0.0
@@ -10,9 +10,9 @@
  */
 
 /**
- * Fired during plugin activation.
+ * Fired during plugin uninstall.
  *
- * This class defines all code necessary to run during the plugin's activation.
+ * This class defines all code necessary to run during the plugin's uninstall.
  *
  * @todo This should probably be in one class together with Deactivator Class.
  * @since      1.0.0
@@ -20,55 +20,42 @@
  * @subpackage Plugin_Name/includes
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_Activator {
+class Plugin_Name_Uninstall {
 
 	/**
-	 * The $_REQUEST during plugin activation.
+	 * The $_REQUEST during plugin uninstall.
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      array    $request    The $_REQUEST array during plugin activation.
+	 * @var      array    $request    The $_REQUEST array during plugin uninstall.
 	 */
 	private static $request = array();
 
 	/**
-	 * The $_REQUEST['plugin'] during plugin activation.
+	 * The $_REQUEST['plugin'] during plugin uninstall.
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $plugin    The $_REQUEST['plugin'] value during plugin activation.
+	 * @var      string    $plugin    The $_REQUEST['plugin'] value during plugin uninstall.
 	 */
 	private static $plugin  = PLUGIN_NAME_BASE_NAME;
-
-	/**
-	 * The $_REQUEST['action'] during plugin activation.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      array    $action    The $_REQUEST[action] value during plugin activation.
-	 */
-	private static $action  = 'activate';
 
 	/**
 	 * Activate the plugin.
 	 *
 	 * Checks if the plugin was (safely) activated.
-	 * Place to add any custom action during plugin activation.
+	 * Place to add any custom action during plugin uninstall.
 	 *
 	 * @since    1.0.0
 	 */
-	public static function activate() {
+	public static function uninstall() {
 
 		if ( false === self::get_request()
 			|| false === self::validate_request( self::$plugin )
 			|| false === self::check_caps()
 		) {
 			if ( isset( $_REQUEST['plugin'] ) ) {
-				if ( ! check_admin_referer( 'activate-plugin_' . self::$request['plugin'] ) ) {
-					exit;
-				}
-			} elseif ( isset( $_REQUEST['checked'] ) ) {
-				if ( ! check_admin_referer( 'bulk-plugins' ) ) {
+				if ( ! check_ajax_referer( 'updates', '_ajax_nonce' ) ) {
 					exit;
 				}
 			}
@@ -76,7 +63,7 @@ class Plugin_Name_Activator {
 
 		/**
 		 * The plugin is now safely activated.
-		 * Perform your activation actions here.
+		 * Perform your uninstall actions here.
 		 */
 
 	}
@@ -93,23 +80,13 @@ class Plugin_Name_Activator {
 	private static function get_request() {
 
 		if ( ! empty( $_REQUEST )
-			&& isset( $_REQUEST['_wpnonce'] )
 			&& isset( $_REQUEST['action'] )
 		) {
 			if ( isset( $_REQUEST['plugin'] ) ) {
-				if ( false !== wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'activate-plugin_' . sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) ) ) ) {
+				if ( false !== check_ajax_referer( 'updates', '_ajax_nonce' ) ) {
 
 					self::$request['plugin'] = sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) );
 					self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
-
-					return self::$request;
-
-				}
-			} elseif ( isset( $_REQUEST['checked'] ) ) {
-				if ( false !== wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'bulk-plugins' ) ) {
-
-					self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
-					self::$request['plugins'] = array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['checked'] ) );
 
 					return self::$request;
 
@@ -134,15 +111,11 @@ class Plugin_Name_Activator {
 	private static function validate_request( $plugin ) {
 
 		if ( $plugin === self::$request['plugin']
-			&& 'activate' === self::$request['action']
+			&& 'delete-plugin' === self::$request['action']
 		) {
 
 			return true;
 
-		} elseif ( 'activate-selected' === self::$request['action']
-			&& in_array( $plugin, self::$request['plugins'] )
-		) {
-			return true;
 		}
 
 		return false;
@@ -152,7 +125,7 @@ class Plugin_Name_Activator {
 	/**
 	 * Check Capabilities.
 	 *
-	 * We want no one else but users with activate_plugins or above to be able to active this plugin.
+	 * We want no one else but users with activate_plugins or above to be able to uninstall this plugin.
 	 *
 	 * @since    1.0.0
 	 * @return bool false if no caps, else true.
