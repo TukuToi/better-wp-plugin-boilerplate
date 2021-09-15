@@ -1,7 +1,7 @@
 # Better WordPress Plugin Boilerplate ![GitHub contributors](https://img.shields.io/github/contributors/TukuToi/better-wp-plugin-boilerplate) ![GitHub last commit](https://img.shields.io/github/last-commit/TukuToi/better-wp-plugin-boilerplate)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=bugs)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=security_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate)
 
-This is a Hard Fork of the original [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate).
+This is a Hard Fork of the [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate).
 The **Better** WordPress Plugin Boilerplate actively takes PRs and is maintained and under active development, as well has more features than the original.
 The goal is still a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins, however actively accepting cooperations, and also considering ClassicPress Compatibility.
 
@@ -16,6 +16,7 @@ The generator form will soon be online on a standalone website as well.
 
 * The Boilerplate is based on the [Plugin API](https://codex.wordpress.org/Plugin_API), [Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/), and [Documentation Standards](https://developer.wordpress.org/coding-standards/inline-documentation-standards/).
 * The plugin is 100% [WPCS (WordPress Code Sniffer)](https://github.com/WordPress/WordPress-Coding-Standards) Compliant.
+* The plugin is scanned by SonarCloud (see SonarCloud badges on top of readme)
 * All classes, functions, and variables are documented so that you know what you need to change.
 * The Boilerplate uses a strict file organization scheme that corresponds both to the WordPress Plugin Repository structure, and that makes it easy to organize the files that compose the plugin.
 * The project includes a `.pot` file as a starting point for internationalization.
