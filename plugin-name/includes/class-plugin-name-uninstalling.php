@@ -20,7 +20,7 @@
  * @subpackage Plugin_Name/includes
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_Uninstall {
+class Plugin_Name_Uninstalling {
 
 	/**
 	 * The $_REQUEST during plugin uninstall.
