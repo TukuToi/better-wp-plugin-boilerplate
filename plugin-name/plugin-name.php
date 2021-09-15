@@ -39,6 +39,11 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'PLUGIN_NAME_VERSION', '1.0.0' );
 
 /**
+ * Define the Plugin basename
+ */
+define( 'PLUGIN_NAME_BASE_NAME', plugin_basename( __FILE__ ) );
+
+/**
  * The code that runs during plugin activation.
  *
  * This action is documented in includes/class-plugin-name-activator.php
@@ -60,8 +65,20 @@ function plugin_name_deactivate() {
 	Plugin_Name_Deactivator::deactivate();
 }
 
+/**
+ * The code that runs during plugin uninstall.
+ *
+ * This action is documented in includes/class-plugin-name-uninstall.php
+ * Full security checks are performed inside the class.
+ */
+function plugin_name_uninstall() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-uninstall.php';
+	Plugin_Name_Uninstall::uninstall();
+}
+
 register_activation_hook( __FILE__, 'plugin_name_activate' );
 register_deactivation_hook( __FILE__, 'plugin_name_deactivate' );
+register_uninstall_hook( __FILE__, 'plugin_name_uninstall' );
 
 /**
  * The core plugin class that is used to define internationalization,
