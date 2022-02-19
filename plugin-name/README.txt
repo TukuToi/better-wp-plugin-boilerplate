@@ -2,8 +2,8 @@
 Contributors: Your Name or Your Company Name
 Donate link: https://donate.tld/
 Tags: comments, spam
-Requires at least: 4.9
-Tested up to: 5.8
+Requires at least: X.X
+Tested up to: X.X
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

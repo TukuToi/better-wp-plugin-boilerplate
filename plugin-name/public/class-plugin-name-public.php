@@ -100,7 +100,7 @@ class Plugin_Name_Public {
 	 * @param    mixed  $content ShortCode enclosed content.
 	 * @param    string $tag    The Shortcode tag.
 	 */
-	public function plugin_name_shortcode_func( $atts, $content = null, $tag ) {
+	public function pfx_shortcode_func( $atts, $content = null, $tag ) {
 
 		/**
 		 * Combine user attributes with known attributes.

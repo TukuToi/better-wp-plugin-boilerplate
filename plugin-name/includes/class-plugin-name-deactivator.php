@@ -124,13 +124,15 @@ class Plugin_Name_Deactivator {
 	 */
 	private static function validate_request( $plugin ) {
 
-		if ( $plugin === self::$request['plugin']
+		if ( isset( self::$request['plugin'] )
+			&& $plugin === self::$request['plugin']
 			&& 'deactivate' === self::$request['action']
 		) {
 
 			return true;
 
-		} elseif ( 'deactivate-selected' === self::$request['action']
+		} elseif ( isset( self::$request['plugins'] )
+			&& 'deactivate-selected' === self::$request['action']
 			&& in_array( $plugin, self::$request['plugins'] )
 		) {
 			return true;
