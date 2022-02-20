@@ -189,7 +189,7 @@ class Plugin_Name {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 		// Shortcode name must be the same as in shortcode_atts() third parameter.
-		$this->loader->add_shortcode( $this->get_plugin_prefix() . 'shortcode', $plugin_public, 'plugin_name_shortcode_func' );
+		$this->loader->add_shortcode( $this->get_plugin_prefix() . 'shortcode', $plugin_public, 'pfx_shortcode_func' );
 
 	}
 

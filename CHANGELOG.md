@@ -1,5 +1,13 @@
 # Changelog
 
+## 2022-02-19
+### Changed
+- Removed uninstall hook with class again in favour of uninstall.php file. Peformance issues with uninstall hook never resolved in Core are the reason.
+- Updated Header tags to be more dynamic for Generate Plugin features, does not affect functionality.
+- Updated prefixes of global functions for better replacement with Generate Plugin Features. Does not affect functionality.
+### Fixed
+- Issue where activation and deactivation could have thrown notices due to undefined indexes.
+
 ## 2021-09-15
 ### Changed
 - Removed uninstall.php file and added uninstall hook with class instead. Allows for dynamic plugin name retrieval during unistall
