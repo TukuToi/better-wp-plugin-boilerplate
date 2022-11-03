@@ -51,7 +51,6 @@ define( 'PLUGIN_NAME_BASE_NAME', plugin_basename( __FILE__ ) );
  * Full security checks are performed inside the class.
  */
 function pfx_activate() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
 	Plugin_Name_Activator::activate();
 }
 
@@ -62,7 +61,6 @@ function pfx_activate() {
  * Full security checks are performed inside the class.
  */
 function pfx_deactivate() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
 	Plugin_Name_Deactivator::deactivate();
 }
 
@@ -70,10 +68,9 @@ register_activation_hook( __FILE__, 'pfx_activate' );
 register_deactivation_hook( __FILE__, 'pfx_deactivate' );
 
 /**
- * The core plugin class that is used to define internationalization,
- * admin-specific hooks, and public-facing site hooks.
+ * Load the autoloader.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
+require __DIR__ . '/includes/autoloader.php';
 
 /**
  * Begins execution of the plugin.
