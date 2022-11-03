@@ -70,7 +70,7 @@ register_deactivation_hook( __FILE__, 'pfx_deactivate' );
 /**
  * Load the autoloader.
  */
-require __DIR__ . '/includes/autoloader.php';
+require_once __DIR__ . '/includes/autoloader.php';
 
 /**
  * Begins execution of the plugin.
