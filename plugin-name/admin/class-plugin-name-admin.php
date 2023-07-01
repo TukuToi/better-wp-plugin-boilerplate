@@ -61,31 +61,49 @@ class Plugin_Name_Admin {
 
 		$this->plugin_name   = $plugin_name;
 		$this->plugin_prefix = $plugin_prefix;
-		$this->version = $version;
+		$this->version       = $version;
 
 	}
 
 	/**
 	 * Register the stylesheets for the admin area.
+	 * You can use $hook_suffix to conditionally load scripts on certain admin pages only.
+	 * Remove it, if you do not use it.
 	 *
-	 * @since    1.0.0
+	 * @see https://developer.wordpress.org/reference/hooks/admin_enqueue_scripts/
+	 * @since 1.0.0
 	 * @param string $hook_suffix The current admin page.
 	 */
 	public function enqueue_styles( $hook_suffix ) {
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style(
+			$this->plugin_name,
+			plugin_dir_url( __FILE__ ) . 'css/plugin-name-admin.css',
+			array(),
+			$this->version,
+			'all'
+		);
 
 	}
 
 	/**
 	 * Register the JavaScript for the admin area.
+	 * You can use $hook_suffix to conditionally load scripts on certain admin pages only.
+	 * Remove it, if you do not use it.
 	 *
+	 * @see https://developer.wordpress.org/reference/hooks/admin_enqueue_scripts/
 	 * @since    1.0.0
 	 * @param string $hook_suffix The current admin page.
 	 */
 	public function enqueue_scripts( $hook_suffix ) {
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script(
+			$this->plugin_name,
+			plugin_dir_url( __FILE__ ) . 'js/plugin-name-admin.js',
+			array( 'jquery' ),
+			$this->version,
+			false
+		);
 
 	}
 

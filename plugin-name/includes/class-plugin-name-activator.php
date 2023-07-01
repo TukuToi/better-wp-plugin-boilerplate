@@ -88,7 +88,11 @@ class Plugin_Name_Activator {
 			&& isset( $_REQUEST['action'] )
 		) {
 			if ( isset( $_REQUEST['plugin'] ) ) {
-				if ( false !== wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'activate-plugin_' . sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) ) ) ) {
+				$nonce = wp_verify_nonce(
+					sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ),
+					'activate-plugin_' . sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) )
+				);
+				if ( false !== $nonce ) {
 
 					self::$request['plugin'] = sanitize_text_field( wp_unslash( $_REQUEST['plugin'] ) );
 					self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
@@ -99,7 +103,7 @@ class Plugin_Name_Activator {
 			} elseif ( isset( $_REQUEST['checked'] ) ) {
 				if ( false !== wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'bulk-plugins' ) ) {
 
-					self::$request['action'] = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
+					self::$request['action']  = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
 					self::$request['plugins'] = array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['checked'] ) );
 
 					return self::$request;
@@ -124,18 +128,22 @@ class Plugin_Name_Activator {
 	 */
 	private static function validate_request( $plugin ) {
 
-		if ( isset( self::$request['plugin'] )
-			&& $plugin === self::$request['plugin']
-			&& 'activate' === self::$request['action']
+		if (
+			(
+				isset( self::$request['plugin'] )
+				&& $plugin === self::$request['plugin']
+				&& 'activate' === self::$request['action']
+			)
+			||
+			(
+				isset( self::$request['plugins'] )
+				&& 'activate-selected' === self::$request['action']
+				&& in_array( $plugin, self::$request['plugins'], true )
+			)
 		) {
 
 			return true;
 
-		} elseif ( isset( self::$request['plugins'] )
-			&& 'activate-selected' === self::$request['action']
-			&& in_array( $plugin, self::$request['plugins'] )
-		) {
-			return true;
 		}
 
 		return false;
@@ -161,4 +169,3 @@ class Plugin_Name_Activator {
 	}
 
 }
-

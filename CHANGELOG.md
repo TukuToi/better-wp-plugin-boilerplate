@@ -1,5 +1,13 @@
 # Changelog
 
+## 2023-07-01
+### Changed
+- Small refactors to be more compliant with coding standards
+- Shortcode example does not default anymore to "pluginname + shortcodename" for the third parameter
+- Stricter array comparison
+### Fixed
+- Warning about optional parameter before required parameter (PHP 8)
+
 ## 2022-02-19
 ### Changed
 - Removed uninstall hook with class again in favour of uninstall.php file. Peformance issues with uninstall hook never resolved in Core are the reason.

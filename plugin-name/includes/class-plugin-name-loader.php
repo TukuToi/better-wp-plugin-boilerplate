@@ -56,9 +56,9 @@ class Plugin_Name_Loader {
 	 */
 	public function __construct() {
 
-		$this->actions      = array();
-		$this->filters      = array();
-		$this->shortcodes   = array();
+		$this->actions    = array();
+		$this->filters    = array();
+		$this->shortcodes = array();
 
 	}
 
@@ -69,8 +69,8 @@ class Plugin_Name_Loader {
 	 * @param    string $hook             The name of the WordPress action that is being registered.
 	 * @param    object $component        A reference to the instance of the object on which the action is defined.
 	 * @param    string $callback         The name of the function definition on the $component.
-	 * @param    int    $priority         Optional. The priority at which the function should be fired. Default is 10.
-	 * @param    int    $accepted_args    Optional. The number of arguments that should be passed to the $callback. Default is 1.
+	 * @param    int    $priority         Optional. Priority at which the function should be fired. Default 10.
+	 * @param    int    $accepted_args    Optional. Number of arguments that should be passed to the $callback. Default 1.
 	 */
 	public function add_action( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {
 		$this->actions = $this->add( $this->actions, $hook, $component, $callback, $priority, $accepted_args );
@@ -83,8 +83,8 @@ class Plugin_Name_Loader {
 	 * @param    string $hook             The name of the WordPress filter that is being registered.
 	 * @param    object $component        A reference to the instance of the object on which the filter is defined.
 	 * @param    string $callback         The name of the function definition on the $component.
-	 * @param    int    $priority         Optional. The priority at which the function should be fired. Default is 10.
-	 * @param    int    $accepted_args    Optional. The number of arguments that should be passed to the $callback. Default is 1.
+	 * @param    int    $priority         Optional. Priority at which the function should be fired. Default 10.
+	 * @param    int    $accepted_args    Optional. Number of arguments that should be passed to the $callback. Default 1.
 	 */
 	public function add_filter( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {
 		$this->filters = $this->add( $this->filters, $hook, $component, $callback, $priority, $accepted_args );
@@ -108,14 +108,22 @@ class Plugin_Name_Loader {
 
 		foreach ( $wp_filter[ $tag ]->callbacks as $filter_priority => $filters ) {
 
-			if ( $filter_priority == $priority ) {
+			if ( $filter_priority === $priority ) {
 
 				foreach ( $filters as $filter ) {
 
-					if ( $filter['function'][1] == $method_to_remove
-						&& is_object( $filter['function'][0] ) // only WP 4.7 and above. This plugin is requiring at least WP 4.9.
+					if ( $filter['function'][1] === $method_to_remove
+						// only WP 4.7 and above. This plugin is requiring at least WP 4.9.
+						&& is_object( $filter['function'][0] )
 						&& $filter['function'][0] instanceof $class_name ) {
-						$removed = $wp_filter[ $tag ]->remove_filter( $tag, array( $filter['function'][0], $method_to_remove ), $priority );
+						$removed = $wp_filter[ $tag ]->remove_filter(
+							$tag,
+							array(
+								$filter['function'][0],
+								$method_to_remove,
+							),
+							$priority
+						);
 					}
 				}
 			}
@@ -147,8 +155,8 @@ class Plugin_Name_Loader {
 	 * @param     string $tag           The name of the new shortcode.
 	 * @param     object $component      A reference to the instance of the object on which the shortcode is defined.
 	 * @param     string $callback       The name of the function that defines the shortcode.
-	 * @param    int    $priority         Optional. The priority at which the function should be fired. Default is 10.
-	 * @param    int    $accepted_args    Optional. The number of arguments that should be passed to the $callback. Default is 1.
+	 * @param    int    $priority         Optional. Priority at which the function should be fired. Default 10.
+	 * @param    int    $accepted_args    Optional. Number of arguments that should be passed to the $callback. Default 1.
 	 */
 	public function add_shortcode( $tag, $component, $callback, $priority = 10, $accepted_args = 1 ) {
 		$this->shortcodes = $this->add( $this->shortcodes, $tag, $component, $callback, $priority, $accepted_args );
@@ -190,15 +198,39 @@ class Plugin_Name_Loader {
 	public function run() {
 
 		foreach ( $this->filters as $hook ) {
-			add_filter( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
+			add_filter(
+				$hook['hook'],
+				array(
+					$hook['component'],
+					$hook['callback'],
+				),
+				$hook['priority'],
+				$hook['accepted_args']
+			);
 		}
 
 		foreach ( $this->actions as $hook ) {
-			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
+			add_action(
+				$hook['hook'],
+				array(
+					$hook['component'],
+					$hook['callback'],
+				),
+				$hook['priority'],
+				$hook['accepted_args']
+			);
 		}
 
 		foreach ( $this->shortcodes as $hook ) {
-			add_shortcode( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
+			add_shortcode(
+				$hook['hook'],
+				array(
+					$hook['component'],
+					$hook['callback'],
+				),
+				$hook['priority'],
+				$hook['accepted_args']
+			);
 		}
 
 	}

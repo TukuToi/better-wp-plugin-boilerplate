@@ -61,7 +61,7 @@ class Plugin_Name_Public {
 
 		$this->plugin_name   = $plugin_name;
 		$this->plugin_prefix = $plugin_prefix;
-		$this->version = $version;
+		$this->version       = $version;
 
 	}
 
@@ -72,7 +72,13 @@ class Plugin_Name_Public {
 	 */
 	public function enqueue_styles() {
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style(
+			$this->plugin_name,
+			plugin_dir_url( __FILE__ ) . 'css/plugin-name-public.css',
+			array(),
+			$this->version,
+			'all'
+		);
 
 	}
 
@@ -83,7 +89,13 @@ class Plugin_Name_Public {
 	 */
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script(
+			$this->plugin_name,
+			plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js',
+			array( 'jquery' ),
+			$this->version,
+			true
+		);
 
 	}
 
@@ -98,9 +110,9 @@ class Plugin_Name_Public {
 	 * @since    1.0.0
 	 * @param    array  $atts    ShortCode Attributes.
 	 * @param    mixed  $content ShortCode enclosed content.
-	 * @param    string $tag    The Shortcode tag.
+	 * @param    string $shortcode    The Shortcode tag.
 	 */
-	public function pfx_shortcode_func( $atts, $content = null, $tag ) {
+	public function pfx_shortcode_func( $atts, $content = null, $shortcode = '' ) {
 
 		/**
 		 * Combine user attributes with known attributes.
@@ -115,7 +127,7 @@ class Plugin_Name_Public {
 				'attribute' => 123,
 			),
 			$atts,
-			$this->plugin_prefix . 'shortcode'
+			$shortcode
 		);
 
 		/**
@@ -131,8 +143,10 @@ class Plugin_Name_Public {
 		 * If the shortcode is enclosing, we may want to do something with $content
 		 */
 		if ( ! is_null( $content ) && ! empty( $content ) ) {
-			$out = do_shortcode( $content );// We can parse shortcodes inside $content.
-			$out = intval( $atts['attribute'] ) . ' ' . sanitize_text_field( $out );// Remember to sanitize your user input.
+			// We can parse shortcodes inside $content.
+			$out = do_shortcode( $content );
+			// Remember to sanitize your user input.
+			$out = intval( $atts['attribute'] ) . ' ' . sanitize_text_field( $out );
 		}
 
 		// ShortCodes are filters and should always return, never echo.

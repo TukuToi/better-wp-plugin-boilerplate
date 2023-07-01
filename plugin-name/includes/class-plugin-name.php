@@ -86,7 +86,7 @@ class Plugin_Name {
 
 		}
 
-		$this->plugin_name = 'plugin-name';
+		$this->plugin_name   = 'plugin-name';
 		$this->plugin_prefix = 'pfx_';
 
 		$this->load_dependencies();
