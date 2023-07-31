@@ -82,7 +82,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  * kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * Generally you will want to hook this function, instead of callign it globally.
+ * Generally you will want to hook this function, instead of calling it globally.
  * However since the purpose of your plugin is not known until you write it, we include the function globally.
  *
  * @since    1.0.0
