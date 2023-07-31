@@ -41,6 +41,10 @@ Because the Boilerplate has no real functionality there will be no menu items, m
 
 For simplicity, you can just use the [TukuToi Boilerplate Generator Plugin](https://github.com/TukuToi/tukutoi-plugin-generator), or the Webform (coming soon), to generate a starter plate using your file-, class-, method- names (and prefixes, authorname, etc etc).
 
+## Generate POT file for translation
+
+You can use WP-CLI to generate the POT file. `cd` into the main directory of your plugin and run `wp i18n make-pot <target-dir>` where `<target-dir>` is the relative path to the pot file (example: `languages/my-plugin.pot`)
+
 ## Submit a Plugin to WordPress.org
 
 [Comin soon] instructions and example folder boilerplate to use when submitting a plugin to WordPress.
