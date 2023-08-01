@@ -35,11 +35,12 @@ For example, if your plugin is named 'example-me' then:
 * change `plugin-name` to `example-me`
 * change `Plugin_Name` to `Example_Me`
 * change `PLUGIN_NAME_` to `EXAMPLE_ME_`
+* change `pfx_` to `example_me_`
 
 It's safe to activate the plugin at this point. 
 Because the Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added until you write the code, of course.
 
-For simplicity, you can just use the [TukuToi Boilerplate Generator Plugin](https://github.com/TukuToi/tukutoi-plugin-generator), or the Webform (coming soon), to generate a starter plate using your file-, class-, method- names (and prefixes, authorname, etc etc).
+For simplicity, you can just use the [TukuToi Boilerplate Generator Plugin](https://github.com/TukuToi/tukutoi-plugin-generator), or the [Webform](https://www.generateplugins.com/), to generate a starter plate using your file-, class-, method- names (and prefixes, authorname, etc etc).
 
 ## Generate POT file for translation
 
@@ -64,7 +65,6 @@ We also follow [Keep A Changelog](https://keepachangelog.com/en/1.0.0/) for chan
 ## Documentation, FAQs, and More
 
 If you’re interested in writing any documentation or creating tutorials please let's discuss in the [Discussions section](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) of this Repo.
-
 
 # Credits
 
