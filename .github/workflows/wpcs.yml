@@ -31,5 +31,8 @@ jobs:
       - name: Set PHPCS standards
         run: vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
 
+      - name: Check PHPCS config
+        run: vendor/bin/phpcs --config-show
+
       - name: Run PHPCS
         run: vendor/bin/phpcs --standard=WordPress --extensions=php src/* resources/* index.php plugin-name.php
