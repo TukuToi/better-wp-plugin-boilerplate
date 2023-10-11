@@ -90,6 +90,7 @@ class WP_Filesystem_Utility {
 	 * Useful for example when setting custom SCG Icons in the WP admin.
 	 *
 	 * phpcs: Usage of base64_encode internal only.
+	 * reviewers: phpcs:ignore is used deterministically because GitHub WPCS Workflow fails otherwise.
 	 *
 	 * @since 1.0.0 Introduced 2023-10-08 16:55
 	 * @author Beda Schmid <beda@tukutoi.com>
@@ -98,6 +99,7 @@ class WP_Filesystem_Utility {
 	 */
 	public function get_base64_encoded_contents( string $path = '' ): string {
 		$this->get_filesystem();
+		// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 		return base64_encode( self::$filesystem->get_contents( $path ) );
 	}
 }

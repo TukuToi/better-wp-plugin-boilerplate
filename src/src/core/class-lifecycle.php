@@ -73,6 +73,10 @@ class Lifecycle {
 	 * Checks if the plugin was (safely) activated.
 	 * Place to add any custom action during plugin activation.
 	 *
+	 * phpcs: not a security issue.
+	 * reviewers: phpcs:ignore is used deterministically because GitHub WPCS Workflow fails otherwise.
+	 * The developer should however have remmoved this section, if unused, on release.
+	 *
 	 * @since  1.0.0 Introduced on 2023-08-01 15:30
 	 * @author Your Name <your-name@site.tld>
 	 * @access public
@@ -80,6 +84,7 @@ class Lifecycle {
 	 */
 	public static function activate(): void {
 
+		// phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedIf
 		if ( self::is_request_valid( 'activate_plugins', 'activate-plugin_' ) ) {
 			/**
 			 * It is now safe to perform your custom activation actions here.
@@ -97,6 +102,10 @@ class Lifecycle {
 	 * Checks if the plugin was (safely) deactivated.
 	 * Place to add any custom action during plugin deactivation.
 	 *
+	 * phpcs: not a security issue.
+	 * reviewers: phpcs:ignore is used deterministically because GitHub WPCS Workflow fails otherwise.
+	 * The developer should however have remmoved this section, if unused, on release.
+	 *
 	 * @since  1.0.0 Introduced on 2023-08-01 15:30
 	 * @author Your Name <your-name@site.tld>
 	 * @access public
@@ -104,6 +113,7 @@ class Lifecycle {
 	 */
 	public static function deactivate(): void {
 
+		// phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedIf
 		if ( self::is_request_valid( 'deactivate_plugins', 'deactivate-plugin_' ) ) {
 			/**
 			 * It is now safe to perform your custom deactivation actions here.
@@ -121,6 +131,10 @@ class Lifecycle {
 	 * Checks if the plugin was (safely) uninstalled.
 	 * Place to add any custom action during plugin uninstallation.
 	 *
+	 * phpcs: not a security issue.
+	 * reviewers: phpcs:ignore is used deterministically because GitHub WPCS Workflow fails otherwise.
+	 * The developer should however have remmoved this section, if unused, on release.
+	 *
 	 * @since  1.0.0 Introduced on 2023-08-01 15:30
 	 * @author Your Name <your-name@site.tld>
 	 * @access public
@@ -128,6 +142,7 @@ class Lifecycle {
 	 */
 	public static function uninstall(): void {
 
+		// phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedIf
 		if ( self::is_uninstall_request_valid( 'delete_plugins' ) ) {
 			/**
 			 * It is now safe to perform your custom uninstall actions here.
