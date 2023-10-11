@@ -20,6 +20,9 @@ jobs:
           php-version: '8.2.11'
           tools: composer, cs2pr
 
+      - name: Set Composer allow-plugins config
+        run: composer config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+
       - name: Install dependencies
         run: |
           composer require wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer --dev
