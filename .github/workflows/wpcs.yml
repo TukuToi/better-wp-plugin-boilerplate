@@ -6,6 +6,9 @@ jobs:
   phpcs:
     name: PHPCS
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src
     steps:
       - name: Checkout code
         uses: actions/checkout@v3.5.3
@@ -26,7 +29,7 @@ jobs:
           composer require --dev wp-coding-standards/wpcs
 
       - name: Set PHPCS standards
-        run: ./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
+        run: ../vendor/bin/phpcs --config-set installed_paths ../vendor/wp-coding-standards/wpcs
 
       - name: Run PHPCS
-        run: ./vendor/bin/phpcs --standard=WordPress --extensions=php src/src/* src/resources/* src/index.php src/plugin-name.php
+        run: ../vendor/bin/phpcs --standard=WordPress --extensions=php src/* resources/* index.php plugin-name.php
