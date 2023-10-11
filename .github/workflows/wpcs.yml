@@ -1,4 +1,4 @@
-name: PHPCS Code Review
+name: PHPCS Code Review for WordPress Coding Standards
 
 on: [push, pull_request]
 
@@ -6,30 +6,29 @@ jobs:
   phpcs:
     name: PHPCS
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src
+    
     steps:
+      # Checkout the code from the repository
       - name: Checkout code
         uses: actions/checkout@v3.5.3
 
+      # Set up PHP environment
       - name: Set up PHP
         uses: shivammathur/setup-php@2.25.5
         with:
           php-version: '8.2'
           tools: composer
 
-      - name: Allow PHPCSUtils dependencies
-        run: composer config --global allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
-
+      # Install the necessary dependencies
       - name: Install dependencies
         run: |
-          composer require --dev squizlabs/php_codesniffer
-          composer require --dev wp-coding-standards/wpcs
+          composer require --working-dir=./src --dev squizlabs/php_codesniffer
+          composer require --working-dir=./src --dev wp-coding-standards/wpcs
 
-
+      # Set the coding standards for PHPCS
       - name: Set PHPCS standards
-        run: vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
+        run: ./src/vendor/bin/phpcs --config-set installed_paths ./src/vendor/wp-coding-standards/wpcs
 
+      # Run PHPCS with the WordPress coding standards on the specified files and directories
       - name: Run PHPCS
-        run: vendor/bin/phpcs --standard=WordPress --extensions=php src/* resources/* index.php plugin-name.php
+        run: ./src/vendor/bin/phpcs --standard=WordPress --extensions=php ./src/src/* ./src/resources/* ./src/index.php ./src/plugin-name.php
