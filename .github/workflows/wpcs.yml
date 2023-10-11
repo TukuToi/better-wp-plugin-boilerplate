@@ -2,8 +2,9 @@ name: WordPress Coding Standards
 
 on:
   push:
-    branches:
-      - main
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
 
 jobs:
   wpcs:
