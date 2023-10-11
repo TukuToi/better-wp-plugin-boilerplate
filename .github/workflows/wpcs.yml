@@ -21,7 +21,13 @@ jobs:
 
       - name: Allow PHPCSUtils dependencies
         run: composer config --global allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
-      
+
+      - name: Install dependencies
+        run: |
+          composer require --dev squizlabs/php_codesniffer
+          composer require --dev phpcsstandards/phpcsutils
+          composer require --dev wp-coding-standards/wpcs
+
       - name: List project directory contents
         run: ls -al ..
 
@@ -30,12 +36,6 @@ jobs:
 
       - name: Print working directory
         run: pwd
-
-      - name: Install dependencies
-        run: |
-          composer require --dev squizlabs/php_codesniffer
-          composer require --dev phpcsstandards/phpcsutils
-          composer require --dev wp-coding-standards/wpcs
 
       - name: Set PHPCS standards
         run: ../vendor/bin/phpcs --config-set installed_paths ../vendor/wp-coding-standards/wpcs
