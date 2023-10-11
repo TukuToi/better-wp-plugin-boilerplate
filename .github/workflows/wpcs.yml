@@ -24,9 +24,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require --dev squizlabs/php_codesniffer
-          composer require --dev phpcsstandards/phpcsutils
-          composer require --dev wp-coding-standards/wpcs
+          composer require --working-dir=.. --dev squizlabs/php_codesniffer
+          composer require --working-dir=.. --dev phpcsstandards/phpcsutils
+          composer require --working-dir=.. --dev wp-coding-standards/wpcs
 
       - name: List project directory contents
         run: ls -al ..
