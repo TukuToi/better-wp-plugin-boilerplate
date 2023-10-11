@@ -21,14 +21,9 @@ jobs:
           tools: composer, cs2pr
 
       - name: Install dependencies
-        run: composer install --working-dir=./src
-
-      - name: Setup WordPress Coding Standards
         run: |
-          cd ./src
-          composer create-project wp-coding-standards/wpcs --no-dev
+          composer require wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer --dev
 
       - name: Run WPCS
         run: |
-          cd ./src
-          vendor/bin/phpcs --standard=WordPress ./resources ./src ./index.php ./plugin-name.php --report=checkstyle | cs2pr
+          vendor/bin/phpcs --standard=WordPress src/resources src/src src/index.php src/plugin-name.php --report=checkstyle | cs2pr
