@@ -14,7 +14,7 @@
         </testsuite>
     </testsuites>
 	<php>
-        <env name="WP_TESTS_DIR" value="/path/to/wordpress-develop/tests/phpunit"/>
+        <env name="WP_TESTS_DIR" value="${WP_TESTS_DIR}"/>
 		<env name="WP_PLUGIN_SLUG" value="plugin-name"/>
     </php>
 

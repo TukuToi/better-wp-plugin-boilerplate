@@ -55,7 +55,7 @@ if ( ! $_plugin_slug ) {
 tests_add_filter(
 	'muplugins_loaded',
 	function() use ( $_plugin_slug ) {
-		require_once dirname( dirname( __FILE__ ) ) . '/' . $_plugin_slug . '.php';
+		require_once dirname( dirname( __FILE__ ) ) . '/src/' . $_plugin_slug . '.php';
 	}
 );
 

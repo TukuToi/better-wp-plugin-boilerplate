@@ -24,17 +24,17 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3.5.3
+      uses: actions/checkout@v4
 
     - name: Setup PHP
-      uses: shivammathur/setup-php@2.25.5
+      uses: shivammathur/setup-php@2.26.0
       with:
-        php-version: '7.4' # Adjust to your project's PHP version
+        php-version: '8.2.11' # Adjust to your project's PHP version
         extensions: mbstring, dom, fileinfo, mysql # Adjust to your project's needs
         coverage: xdebug
 
     - name: Install PHPUnit
-      run: composer require --dev phpunit/phpunit:^9.0
+      run: composer global require --dev phpunit/phpunit:^9.0 
 
     - name: Setup WordPress Tests
       run: |
@@ -52,4 +52,4 @@ jobs:
         mysql -uroot -proot -e 'CREATE DATABASE IF NOT EXISTS ${{ env.DB_NAME }};'
 
     - name: Run tests
-      run: ./vendor/bin/phpunit
+      run: ~/.composer/vendor/bin/phpunit

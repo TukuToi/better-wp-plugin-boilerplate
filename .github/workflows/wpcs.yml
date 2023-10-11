@@ -3,7 +3,7 @@ name: WordPress Coding Standards
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   wpcs:

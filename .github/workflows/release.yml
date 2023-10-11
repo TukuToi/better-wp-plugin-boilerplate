@@ -7,23 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4
 
       - name: Set up PHP
-        uses: shivammathur/setup-php@2.25.5
+        uses: shivammathur/setup-php@2.26.0
         with:
-          php-version: '7.4'
-          tools: composer:v2
+          php-version: '8.2.11'
+          tools: composer
 
       - name: Build release package
         run: |
           mkdir plugin-name
-          cp -R src/src plugin-name/src
-          cp -R src/resources plugin-name/resources
-          cp src/index.php plugin-name/index.php
-          cp src/license.txt plugin-name/license.txt
-          cp src/plugin-name.php plugin-name/plugin-name.php
-          cp src/readme.txt plugin-name/readme.txt
+          cp -R src/* plugin-name/
           zip -r plugin-name.zip plugin-name/
 
       - name: Get the version
