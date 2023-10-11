@@ -25,8 +25,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer --dev
+          composer global require wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer --dev
 
       - name: Run WPCS
         run: |
-          vendor/bin/phpcs --standard=WordPress src/resources src/src src/index.php src/plugin-name.php --report=checkstyle | cs2pr
+          ~/.composer/vendor/bin/phpcs --standard=WordPress src/resources/* src/src/* src/index.php src/plugin-name.php --report=checkstyle | cs2pr
