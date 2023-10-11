@@ -1,34 +1,34 @@
-name: PHPCS Code Review for WordPress Coding Standards
+name: WordPress Coding Standards
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - develop
 
 jobs:
-  phpcs:
-    name: PHPCS
+  wpcs:
+    name: WPCS Scan
     runs-on: ubuntu-latest
-    
+
     steps:
-      # Checkout the code from the repository
       - name: Checkout code
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4
 
-      # Set up PHP environment
       - name: Set up PHP
-        uses: shivammathur/setup-php@2.25.5
+        uses: shivammathur/setup-php@2.26.0
         with:
-          php-version: '8.2'
-          tools: composer
+          php-version: '8.2.11'
+          tools: composer, cs2pr
 
-      # Install the necessary dependencies
       - name: Install dependencies
+        run: composer install --working-dir=./src
+
+      - name: Setup WordPress Coding Standards
         run: |
-          composer require --working-dir=./src --dev squizlabs/php_codesniffer
-          composer require --working-dir=./src --dev wp-coding-standards/wpcs
+          cd ./src
+          composer create-project wp-coding-standards/wpcs --no-dev
 
-      # Set the coding standards for PHPCS
-      - name: Set PHPCS standards
-        run: ./src/vendor/bin/phpcs --config-set installed_paths ./src/vendor/wp-coding-standards/wpcs
-
-      # Run PHPCS with the WordPress coding standards on the specified files and directories
-      - name: Run PHPCS
-        run: ./src/vendor/bin/phpcs --standard=WordPress --extensions=php ./src/src/* ./src/resources/* ./src/index.php ./src/plugin-name.php
+      - name: Run WPCS
+        run: |
+          cd ./src
+          vendor/bin/phpcs --standard=WordPress ./resources ./src ./index.php ./plugin-name.php --report=checkstyle | cs2pr
