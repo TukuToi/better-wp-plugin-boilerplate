@@ -1,0 +1,5 @@
+- install PHPUnit () composer require --dev phpunit/phpunit:^9.0
+- install WP Unit Tests https://make.wordpress.org/core/handbook/testing/automated-testing/phpunit/
+- edit phpunit.xml file 
+- install WPCS (Stnadard: WordPress)
+- install composer

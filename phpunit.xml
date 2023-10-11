@@ -1,0 +1,21 @@
+<phpunit bootstrap="tests/bootstrap.php"
+         backupGlobals="false"
+         colors="true"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+		 cacheResultFile="./tmp/.phpunit.result.cache"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Plugin Test Suite">
+            <directory suffix=".php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+	<php>
+        <env name="WP_TESTS_DIR" value="/path/to/wordpress-develop/tests/phpunit"/>
+		<env name="WP_PLUGIN_SLUG" value="plugin-name"/>
+    </php>
+
+</phpunit>

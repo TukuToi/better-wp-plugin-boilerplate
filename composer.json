@@ -1,0 +1,20 @@
+{
+    "name": "company/plugin-name",
+    "description": "Package/Project Description",
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "classmap": ["src/src/"]
+    },
+	"config": {
+        "vendor-dir": "src/vendor"
+    },
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "your-name@site.tld"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

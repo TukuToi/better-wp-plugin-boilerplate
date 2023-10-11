@@ -1,0 +1,32 @@
+name: PHPCS Code Review
+
+on: [push, pull_request]
+
+jobs:
+  phpcs:
+    name: PHPCS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@2.25.5
+        with:
+          php-version: '8.2'
+          tools: composer
+
+      - name: Allow PHPCSUtils dependencies
+        run: composer config --global allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+
+      - name: Install dependencies
+        run: |
+          composer require --dev squizlabs/php_codesniffer
+          composer require --dev phpcsstandards/phpcsutils
+          composer require --dev wp-coding-standards/wpcs
+
+      - name: Set PHPCS standards
+        run: ./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
+
+      - name: Run PHPCS
+        run: ./vendor/bin/phpcs --standard=WordPress --extensions=php src/src/* src/resources/* src/index.php src/plugin-name.php
