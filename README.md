@@ -1,74 +1,78 @@
 # Better WordPress Plugin Boilerplate ![GitHub contributors](https://img.shields.io/github/contributors/TukuToi/better-wp-plugin-boilerplate) ![GitHub last commit](https://img.shields.io/github/last-commit/TukuToi/better-wp-plugin-boilerplate)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=bugs)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=security_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=bugs)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=security_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [PHPUnit](https://github.com/tukutoi/workflow-test/actions/workflows/phpunit.yml/badge.svg) [WPCS](https://github.com/tukutoi/workflow-test/actions/workflows/wpcs.yml/badge.svg)
 
-This is a Hard Fork of the [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate).
-The **Better** WordPress Plugin Boilerplate actively takes PRs and is maintained and under active development, as well has more features than the original.
-The goal is still a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins, however actively accepting cooperations, and also considering ClassicPress Compatibility.
+The Better WordPress Plugin Boilerplate is an advanced starting point for developers looking to create robust and standards-compliant plugins for WordPress and ClassicPress. In a landscape where coding standards and best practices are pivotal, this Boilerplate provides a structured, organized, and modern foundation, ensuring your plugin starts on the right foot.
 
-In the case ClassicPress and WordPress diverge too much in future we will consider creating a new, standalone repo just for ClassicPress. However as it stands of today, 2021-07-9 (9th July 2021) the Codebase of both CMS are still compliant.
+## Why This Boilerplate?
 
-A Generator Plugin to generate new Plugins by filling out a form is available [here](https://github.com/TukuToi/tukutoi-plugin-generator) and acts like a WordPress Plugin.
-It can be used to *generate* a Plugin based on *any* boilerplate source really, but uses by default the Better WordPress Plugin Boilerplate.
+- **Modern Codebase:** Crafted with modern PHP practices, this Boilerplate adheres to the latest coding standards, promoting maintainability, scalability, and readability.
+- **Adherence to WPCS3** Fully complies with the WordPress Coding Standards v3.
+- **Community-Driven:** Born from a desire to continue the legacy of a great project, and to foster collaboration and innovation within the community. The Better WordPress Plugin Boilerplate is not just a code repository, but a hub for developers to share, learn, and contribute.
+- **Cross-CMS Compatibility:** Designed with both WordPress and ClassicPress in mind, ensuring a broader reach and future-proofing your plugins against the evolving CMS landscape.
+- **Quality Assurance:** With 100% test coverage, WordPress Coding Standards compliance, and continuous scanning by SonarCloud, quality is at the forefront, ensuring your plugins are reliable, secure, and ready for the real world.
+- **Educational Value:** Besides being a practical tool, this Boilerplate serves as an educational resource, helping developers understand the best practices in WordPress plugin development.
+- **Active Maintenance:** Unlike stagnant boilerplates, the Better WordPress Plugin Boilerplate is under active development. With a growing community and a dedication to accepting and reviewing Pull Requests, this project is continually evolving to include the latest best practices and features.
 
-The generator form will soon be online on a standalone website as well.
+### Qualities
 
-## Features
+- **Standardised Package Structure:** Conforms to the [Standard PHP package skeleton](https://github.com/php-pds/skeleton) guidelines, ensuring a consistent and organized package structure.
+- **Standardised Code Comments:** Adheres to [phpDocumentor](https://docs.phpdoc.org/guide/guides/docblocks.html) standards for doc block compliant code comments, enhancing code readability and maintainability.
+- **Requirement Levels Indications:** Utilizes [RFC-2119](https://datatracker.ietf.org/doc/html/rfc2119) for indicating requirement levels, promoting clear and unambiguous communication of requirements.
+- **Object-Oriented PHP and Namespaces:** Employs Object-Oriented PHP and Namespaces to enhance code organization and maintainability, fostering a clean and modular codebase.
+- **Test Coverage:** Boasts 100% test coverage with [PHPUnit](https://phpunit.de), ensuring robustness and reliability.
+- **WordPress Standard Compliant:** Achieves 100% compliance with [WPCS](https://github.com/WordPress/WordPress-Coding-Standards) `WordPress` Standard, promoting WordPress best practices and coding standards.
+- **SonarCloud Scanned:** 100% scanned by [SonarCloud](https://sonarcloud.io/projects), ensuring code quality and identifying potential issues.
+- **Fully Documented:** Comprehensive documentation covering all aspects of the boilerplate, facilitating ease of use and customization.
+- **Cross-CMS Compatibility:** Ensures 100% compatibility with both WordPress _and_ ClassicPress, catering to a wider developer audience.
+- **Security:** Prioritizes security, providing a secure foundation for developing WordPress plugins.
 
-* The Boilerplate is based on the [Plugin API](https://codex.wordpress.org/Plugin_API), [Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/), and [Documentation Standards](https://developer.wordpress.org/coding-standards/inline-documentation-standards/).
-* The plugin is 100% [WPCS (WordPress Code Sniffer)](https://github.com/WordPress/WordPress-Coding-Standards) Compliant.
-* The plugin is scanned by SonarCloud (see SonarCloud badges on top of readme)
-* All classes, functions, and variables are documented so that you know what you need to change.
-* The Boilerplate uses a strict file organization scheme that corresponds both to the WordPress Plugin Repository structure, and that makes it easy to organize the files that compose the plugin.
-* The project includes a `.pot` file as a starting point for internationalization.
+# Usage
 
-## How to Create a Plugin
+For detailed documentation on the Plugin usage, and Development processes, please refer to the Documentation.
 
-The Better WordPress Plugin Boilerplate (everything *inside and inclusive* the folder `plugin-name` of this repo) can be installed directly into your plugins folder "as-is". 
+Note, this repository is not a Plugin you can download and install. The Plugin files instead are _included_ in the `src` folder of this Repository. When releasing your plugin you would have to package the filesof `src` into a folder named accordingly to your plugin.
 
-You will want to rename it and the classes and methods inside of it to fit your needs. 
-Some comments inside the Boilerplate may need to be rewritten as well, and adapted to your code/use case.
+# Contributing to Better WordPress Plugin Boilerplate
 
-For example, if your plugin is named 'example-me' then:
+We warmly welcome contributions from the community. Whether you're fixing bugs, improving documentation, or proposing new features, your efforts are highly appreciated. Here's how you can contribute:
 
-* rename files from `plugin-name` to `example-me`
-* change `plugin_name` to `example_me`
-* change `plugin-name` to `example-me`
-* change `Plugin_Name` to `Example_Me`
-* change `PLUGIN_NAME_` to `EXAMPLE_ME_`
+## Share Your Ideas
 
-It's safe to activate the plugin at this point. 
-Because the Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added until you write the code, of course.
+1. Got a suggestion or a new feature idea? Head over to the [Discussions](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) section and share it with the community.
+2. For an idea to be considered for implementation, it should receive at least 2 distinct thumbs up (*in addition* to the OP).
+   
+## Submit Your Code
 
-For simplicity, you can just use the [TukuToi Boilerplate Generator Plugin](https://github.com/TukuToi/tukutoi-plugin-generator), or the Webform (coming soon), to generate a starter plate using your file-, class-, method- names (and prefixes, authorname, etc etc).
+1. If you have working code to implement your idea, please submit a Pull Request (PR) **to the develop branch**.
+2. Ensure that your code follows the PHP and WP coding standards and has passed all the GitHub Actions checks.
+3. Your PR should have corresponding discussions post with at least 2 additional thumbs up for it to be merged.
 
-## Submit a Plugin to WordPress.org
+## Code Standards and Practices
 
-[Comin soon] instructions and example folder boilerplate to use when submitting a plugin to WordPress.
+1. **Coding Standards:** We follow PHP and WP coding standards to maintain a clean and consistent codebase.
+2. **Autoloading:** We utilize Composer's `classmap` autoloading for efficient class loading. We use `classmap` over `psr4` so the WordPress naming standards can be fulfilled.
+3. **Versioning:** We adhere to [Semantic Versioning](https://semver.org/) for a clear and predictable versioning scheme.
+4. **Changelog:** We maintain a changelog for our project following the [Keep A Changelog](https://keepachangelog.com/en/1.0.0/) standards.
 
-# What About Contributing?
+## Special Cases
 
-Submit your idea to the [Discussions](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) for the community to approve. Each Idea needs at least 2 distinct thumbs up (*additional* to the OP) to be considered for implemenation. 
-
-Additionally to the Discussions Post, if you have working code to implement your Idea, please add a PR **to the develop branch**.
-PR'd ideas still need at least 2 additional thumbs up in the Discussion post to be merged. 
-
-Note that in special cases (security, quality, yada yada) we may or may not merge the code and may or may not add or remove features discussed at our own will, independent from the amoung of thumbsup.
-
-The Better WordPress Plugin Boilerplate follows PHP, WP Coding standards and has the Git Actions for it incorporated.
-We also follow [Keep A Changelog](https://keepachangelog.com/en/1.0.0/) for changelogs and [SemVer](https://semver.org/) for Versioning.
+In special cases related to security, code quality, etc., the maintainers reserve the right to merge or not merge PRs, and to add or remove features at their discretion, regardless of the number of thumbs up a discussion or PR has received.
 
 ## Documentation, FAQs, and More
 
 If you’re interested in writing any documentation or creating tutorials please let's discuss in the [Discussions section](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) of this Repo.
 
+## Stay Connected
+
+- Join the ongoing discussions to stay updated with the latest proposals and the roadmap.
+- Feel free to reach out to the maintainers for any queries.
+
+Your contributions help make Better WordPress Plugin Boilerplate better. Together, let's build a robust, modern, and community-driven boilerplate for WordPress and ClassicPress plugin development!
 
 # Credits
 
-The WordPress Plugin Boilerplate was started in 2011 by [Tom McFarlin](https://twitter.com/tommcfarlin/) and has since included a number of great contributions. In March of 2015 the project was handed over by Tom to Devin Vinson.
+The WordPress Plugin Boilerplate journey commenced in 2011 with [Tom McFarlin](https://twitter.com/tommcfarlin/) at the helm, later transitioning to [Devin Vinson](https://github.com/DevinVinson) in March 2015. The collaboration included noteworthy contributions from [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
 
-The version of which the the **Better** WordPress Plugin Boilerplate hard-fork was taken was developed in conjunction with [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
+Beginning July 5, 2021, the Better WordPress Plugin Boilerplate found a new home with [TukuToi](https://www.tukutoi.com/) and its vibrant community. This hard-fork, now a standalone project, emerged from a desire to propel the original project forward, amidst a prolonged development hiatus on the original repository.
 
-From 2021-07-5 (July 05th 2021) onwards , the **Better** WordPress Plugin Boilerplate is maintained by [TukuToi](https://www.tukutoi.com/) and the active community.
-We hard-forked the project (which means GitHub has detached the fork and made it a standalone project) because the current development on the existing Boilerplate Repo is stalling since several years, and things started to get oudated (and that won't get any better with time to go by). 
-
-We saw an opportunity here to continue a great project and develop it further, also with great ideas of the community itself.
+Our iteration of the Boilerplate not only revives but transcends its predecessor, introducing a plethora of modernized features while retaining a homage to the initial concept and its contributors. The evolution, spurred by community insights and the relentless pursuit of excellence, encapsulates a fresh, modern, and collaborative spirit propelling the WordPress and ClassicPress ecosystems forward.

@@ -1,5 +1,23 @@
 # Changelog
 
+## 2023-08-01
+### Changed 
+- Use Constant instead of function for the plugin base name
+- Added License to main project
+- Updated readme with information on translation and minor fixes
+### HEADS UP
+This is the last release before a full refactor towards more modern approaches such as using namespaces and autoloader. This version (4.0.1) will not receive any further updates unless security fixes. Version 5.0.0 and upwards is the only actively supported version from today on.
+
+The new version 5.0.0 and upwards is NOT backwards compatible with prior versions.
+
+## 2023-07-01
+### Changed
+- Small refactors to be more compliant with coding standards
+- Shortcode example does not default anymore to "pluginname + shortcodename" for the third parameter
+- Stricter array comparison
+### Fixed
+- Warning about optional parameter before required parameter (PHP 8)
+
 ## 2022-02-19
 ### Changed
 - Removed uninstall hook with class again in favour of uninstall.php file. Peformance issues with uninstall hook never resolved in Core are the reason.

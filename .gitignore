@@ -9,6 +9,8 @@
 *.vi
 *~
 *.sass-cache
+*.phpunit.result.cache
+tmp
 
 # OS or Editor folders
 .DS_Store
@@ -37,3 +39,5 @@ dwsync.xml
 intermediate
 .idea
 cache
+.vscode
+
