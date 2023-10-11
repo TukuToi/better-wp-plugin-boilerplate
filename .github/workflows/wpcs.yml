@@ -21,6 +21,15 @@ jobs:
 
       - name: Allow PHPCSUtils dependencies
         run: composer config --global allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+      
+      - name: List project directory contents
+        run: ls -al ..
+
+      - name: List vendor/bin contents
+        run: ls -al ../vendor/bin/
+
+      - name: Print working directory
+        run: pwd
 
       - name: Install dependencies
         run: |
