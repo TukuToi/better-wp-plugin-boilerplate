@@ -10,7 +10,7 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite name="Plugin Test Suite">
-            <directory suffix=".php">./tests/</directory>
+            <directory suffix=".php">../tests/</directory>
         </testsuite>
     </testsuites>
 	<php>

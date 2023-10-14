@@ -52,4 +52,4 @@ jobs:
         mysql -uroot -proot -e 'CREATE DATABASE IF NOT EXISTS ${{ env.DB_NAME }};'
 
     - name: Run tests
-      run: ~/.composer/vendor/bin/phpunit
+      run: ~/.composer/vendor/bin/phpunit -c ./config/phpunit.xml
