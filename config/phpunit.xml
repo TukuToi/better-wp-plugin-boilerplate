@@ -1,4 +1,4 @@
-<phpunit bootstrap="tests/bootstrap.php"
+<phpunit bootstrap="../tests/bootstrap.php"
          backupGlobals="false"
          colors="true"
          verbose="true"
@@ -6,7 +6,7 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-		 cacheResultFile="./tmp/.phpunit.result.cache"
+		 cacheResultFile="../tmp/.phpunit.result.cache"
          stopOnFailure="false">
     <testsuites>
         <testsuite name="Plugin Test Suite">
