@@ -1,7 +1,9 @@
 # Better WordPress Plugin Boilerplate ![GitHub contributors](https://img.shields.io/github/contributors/TukuToi/better-wp-plugin-boilerplate) ![GitHub last commit](https://img.shields.io/github/last-commit/TukuToi/better-wp-plugin-boilerplate)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=bugs)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=TukuToi_better-wp-plugin-boilerplate&metric=security_rating)](https://sonarcloud.io/dashboard?id=TukuToi_better-wp-plugin-boilerplate) [![Run PHPUnit](https://github.com/TukuToi/better-wp-plugin-boilerplate/actions/workflows/phpunit.yml/badge.svg)](https://github.com/TukuToi/better-wp-plugin-boilerplate/actions/workflows/phpunit.yml) [![WordPress Coding Standards](https://github.com/TukuToi/better-wp-plugin-boilerplate/actions/workflows/wpcs.yml/badge.svg)](https://github.com/TukuToi/better-wp-plugin-boilerplate/actions/workflows/wpcs.yml)
 
-The Better WordPress Plugin Boilerplate is an advanced starting point for developers looking to create robust and standards-compliant plugins for WordPress and ClassicPress. In a landscape where coding standards and best practices are pivotal, this Boilerplate provides a structured, organized, and modern foundation, ensuring your plugin starts on the right foot.
+The Better WordPress Plugin Boilerplate is a starting point for *developers* looking to create robust and standards-compliant plugins for WordPress and ClassicPress. In a landscape where coding standards and best practices are pivotal, this Boilerplate provides a structured, organized, and modern foundation, ensuring your plugin starts on the right foot.
+
+*If you are not a(n experienced) Developer, you can still use this boilerplate, but there is a learning curve*
 
 ## Why This Boilerplate?
 
@@ -28,51 +30,28 @@ The Better WordPress Plugin Boilerplate is an advanced starting point for develo
 
 # Usage
 
-For detailed documentation on the Plugin usage, and Development processes, please refer to the Documentation.
+This repository is not a Plugin you can download and install. The Plugin files instead are _included_ in the `src` folder of this Repository.
 
-Note, this repository is not a Plugin you can download and install. The Plugin files instead are _included_ in the `src` folder of this Repository. When releasing your plugin you would have to package the filesof `src` into a folder named accordingly to your plugin.
-
-# Contributing to Better WordPress Plugin Boilerplate
-
-We warmly welcome contributions from the community. Whether you're fixing bugs, improving documentation, or proposing new features, your efforts are highly appreciated. Here's how you can contribute:
-
-## Share Your Ideas
-
-1. Got a suggestion or a new feature idea? Head over to the [Discussions](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) section and share it with the community.
-2. For an idea to be considered for implementation, it should receive at least 2 distinct thumbs up (*in addition* to the OP).
-   
-## Submit Your Code
-
-1. If you have working code to implement your idea, please submit a Pull Request (PR) **to the develop branch**.
-2. Ensure that your code follows the PHP and WP coding standards and has passed all the GitHub Actions checks.
-3. Your PR should have corresponding discussions post with at least 2 additional thumbs up for it to be merged.
-
-## Code Standards and Practices
-
-1. **Coding Standards:** We follow PHP and WP coding standards to maintain a clean and consistent codebase.
-2. **Autoloading:** We utilize Composer's `classmap` autoloading for efficient class loading. We use `classmap` over `psr4` so the WordPress naming standards can be fulfilled.
-3. **Versioning:** We adhere to [Semantic Versioning](https://semver.org/) for a clear and predictable versioning scheme.
-4. **Changelog:** We maintain a changelog for our project following the [Keep A Changelog](https://keepachangelog.com/en/1.0.0/) standards.
-
-## Special Cases
-
-In special cases related to security, code quality, etc., the maintainers reserve the right to merge or not merge PRs, and to add or remove features at their discretion, regardless of the number of thumbs up a discussion or PR has received.
-
-## Documentation, FAQs, and More
-
-If you’re interested in writing any documentation or creating tutorials please let's discuss in the [Discussions section](https://github.com/TukuToi/better-wp-plugin-boilerplate/discussions) of this Repo.
-
-## Stay Connected
-
-- Join the ongoing discussions to stay updated with the latest proposals and the roadmap.
-- Feel free to reach out to the maintainers for any queries.
-
-Your contributions help make Better WordPress Plugin Boilerplate better. Together, let's build a robust, modern, and community-driven boilerplate for WordPress and ClassicPress plugin development!
+For detailed documentation on the Plugin usage and Development processes, please refer to the [Wiki](https://github.com/TukuToi/better-wp-plugin-boilerplate/wiki).
 
 # Credits
 
+*This credits section is only here to honor the origins of the repository, as it is a hard-fork. The code has been 100% rewamped from the original.*
+
+## Origins
+
 The WordPress Plugin Boilerplate journey commenced in 2011 with [Tom McFarlin](https://twitter.com/tommcfarlin/) at the helm, later transitioning to [Devin Vinson](https://github.com/DevinVinson) in March 2015. The collaboration included noteworthy contributions from [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
 
-Beginning July 5, 2021, the Better WordPress Plugin Boilerplate found a new home with [TukuToi](https://www.tukutoi.com/) and its vibrant community. This hard-fork, now a standalone project, emerged from a desire to propel the original project forward, amidst a prolonged development hiatus on the original repository.
+## Reason for hard-forking 
 
-Our iteration of the Boilerplate not only revives but transcends its predecessor, introducing a plethora of modernized features while retaining a homage to the initial concept and its contributors. The evolution, spurred by community insights and the relentless pursuit of excellence, encapsulates a fresh, modern, and collaborative spirit propelling the WordPress and ClassicPress ecosystems forward.
+All the original maintainers are not activly contributing the project anymore, nor willing to let others contribute - **which was made very clear by blocking eager contributors**.
+
+As a growing amount of PRs and requests piled up in the original repository, it became clear that someone needed to continue the work. This hard-fork, now a standalone project, emerged from a desire to propel the original project forward, amidst a prolonged development hiatus on the original repository.
+
+## Curerent situation
+
+Beginning July 5, 2021, the Better WordPress Plugin Boilerplate found a new home with [TukuToi](https://www.tukutoi.com/).
+
+**Our iteration of the Boilerplate not only revives but transcends its predecessor, introducing a plethora of modernized features while retaining a homage to the initial concept and its contributors.** 
+
+The evolution, spurred by community insights and the relentless pursuit of excellence, encapsulates a fresh, modern, and collaborative spirit propelling the WordPress and ClassicPress ecosystems forward.

@@ -12,7 +12,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables\CPT
+ * @package Plugins\PluginName\Registerables\CPT
  * @author  Your Name <your-name@site.tld>
  */
 
@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Base CPT class provides abstracts and methods to register a new Custom Post Type.
  *
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables\CPT
+ * @package Plugins\PluginName\Registerables\CPT
  * @author  Your Name <your-name@site.tld>
  */
 abstract class Base_CPT extends Base_WP_Registerable {
@@ -75,15 +75,45 @@ abstract class Base_CPT extends Base_WP_Registerable {
 	abstract protected function set_specific_args(): array;
 
 	/**
+	 * Validate the key
+	 *
+	 * Validate $key for get_key().
+	 *
+	 * @since 1.0.0 Introduced on 2023-10-08 16:30
+	 * @author Beda Schmid <beda@tukutoi.com>
+	 * @throws \LengthException If the key length validation fails.
+	 * @return string The validated string.
+	 */
+	protected function validate_key(): string {
+		if ( empty( $this->key ) ) {
+			$this->set_key();
+			$this->sanitize_key();
+		}
+
+		/**
+		 * CPT Max length: 20 chars
+		 *
+		 * @see https://developer.wordpress.org/reference/functions/register_post_type/#parameters
+		 */
+		if ( strlen( $this->key ) > 20 ) {
+			throw new \LengthException(
+				esc_html( "The \"{$this->key}\" key exceeds 20 characters." )
+			);
+		}
+
+		return $this->key;
+	}
+
+	/**
 	 * Set Default Labels
 	 *
 	 * Set the registerable's default labels.
-	 * You can over write ALL your Custom Post Type labels here.
+	 * You can over write ALLLx your Custom Post Type labels here.
 	 *
 	 * @since 1.0.0 Introduced on 2023-10-08 17:09
 	 * @see https://developer.wordpress.org/reference/functions/get_post_type_labels/#description
 	 * @author Beda Schmid <beda@tukutoi.com>
-	 * @return array
+	 * @return array string[]
 	 */
 	protected function set_default_labels(): array {
 		return array(

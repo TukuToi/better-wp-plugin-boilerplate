@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor configVersion="3.0">
+  <paths>
+    <output>../docs</output>
+	<cache>../docs-cache</cache>
+  </paths>
+  <version number="1.0.0">
+    <api format="php">
+      <source dsn="..">
+        <!--1 or more repetitions:-->
+        <path>src</path>
+      </source>
+	  <ignore hidden="true" symlinks="true">
+        <!--1 or more repetitions:-->
+        <path>src/vendor/**/*</path>
+      </ignore>
+      <!--Optional:-->
+      <extensions>
+        <!--1 or more repetitions:-->
+        <extension>php</extension>
+		<extension>css</extension>
+		<extension>js</extension>
+      </extensions>
+	  <default-package-name>Plugins</default-package-name>
+      <include-source>true</include-source>
+    </api>
+    <guide format="rst">
+      <source dsn=".">
+        <!--1 or more repetitions:-->
+        <path>documentation-guides</path>
+      </source>
+      <!--Optional:-->
+      <output>guide</output>
+    </guide>
+  </version>
+  <setting name="guides.enabled" value="true"/>
+  <!-- <template name="documentation-templates/data/templates/your-template"/> -->
+  <title>Documentation</title>
+</phpdocumentor>

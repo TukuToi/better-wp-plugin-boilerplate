@@ -12,7 +12,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables\Taxonomies
+ * @package Plugins\PluginName\Registerables\Taxonomies
  * @author  Your Name <your-name@site.tld>
  */
 
@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * This class provides abstracts and methods for registering a new taxonomy.
  *
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables\Taxonomies
+ * @package Plugins\PluginName\Registerables\Taxonomies
  * @author  Your Name <your-name@site.tld>
  */
 abstract class Base_Taxonomy extends Base_WP_Registerable {
@@ -84,6 +84,37 @@ abstract class Base_Taxonomy extends Base_WP_Registerable {
 	 * @return array
 	 */
 	abstract protected function set_object_types(): array;
+
+	/**
+	 * Validate the key
+	 *
+	 * Validate $key for get_key().
+	 *
+	 * @since 1.0.0 Introduced on 2023-10-08 16:30
+	 * @author Beda Schmid <beda@tukutoi.com>
+	 * @throws \LengthException If the key length validation fails.
+	 * @return string The validated string.
+	 */
+	protected function validate_key(): string {
+		if ( empty( $this->key ) ) {
+			$this->set_key();
+			$this->sanitize_key();
+		}
+
+		/**
+		 * Taxonomy max length: 32 chars         *
+		 *
+		 * @see https://developer.wordpress.org/reference/functions/register_taxonomy/#parameters
+		 * @see https://developer.wordpress.org/reference/functions/sanitize_key/
+		 */
+		if ( strlen( $this->key ) > 32 ) {
+			throw new \LengthException(
+				esc_html( "The \"{$this->key}\" key exceeds 32 characters." )
+			);
+		}
+
+		return $this->key;
+	}
 
 	/**
 	 * Set Default Labels

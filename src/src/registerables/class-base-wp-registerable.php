@@ -12,7 +12,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables
+ * @package Plugins\PluginName\Registerables
  * @author  Your Name <your-name@site.tld>
  */
 
@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Provides an abstract for all registerables in this plugin.
  *
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables
+ * @package Plugins\PluginName\Registerables
  * @author  Your Name <your-name@site.tld>
  */
 abstract class Base_WP_Registerable {
@@ -70,6 +70,19 @@ abstract class Base_WP_Registerable {
 	 * @return void
 	 */
 	abstract protected function set_key(): void;
+
+	/**
+	 * Validate the key
+	 *
+	 * Validate $key for get_key().
+	 *
+	 * @since 1.0.0 Introduced on 2023-10-08 16:30
+	 * @author Beda Schmid <beda@tukutoi.com>
+	 * @throws \LengthException If the key length validation fails.
+	 * @throws \UnexpectedValueException If the key sanitization fails.
+	 * @return string The validated string.
+	 */
+	abstract protected function validate_key(): string;
 
 	/**
 	 * Register the registerable
@@ -98,42 +111,20 @@ abstract class Base_WP_Registerable {
 	}
 
 	/**
-	 * Validate the key
+	 * Sanitize the key
 	 *
-	 * Validate $key for get_key().
+	 * Sanitize $key for validate_key().
 	 *
 	 * @since 1.0.0 Introduced on 2023-10-08 16:30
 	 * @author Beda Schmid <beda@tukutoi.com>
-	 * @throws \LengthException If the key length validation fails.
 	 * @throws \UnexpectedValueException If the key sanitization fails.
-	 * @return string The validated string.
+	 * @return void
 	 */
-	protected function validate_key(): string {
-
-		if ( empty( $this->key ) ) {
-			$this->set_key();
-		}
-
-		/**
-		 * CPT Max length: 20 chars
-		 * Taxonomy max length: 32 chars
-		 *
-		 * @see https://developer.wordpress.org/reference/functions/register_post_type/#parameters
-		 * @see https://developer.wordpress.org/reference/functions/register_taxonomy/#parameters
-		 * @see https://developer.wordpress.org/reference/functions/sanitize_key/
-		 */
-		$max_length = $this instanceof \Company\Plugins\PluginName\Registerables\CPT\Base_CPT ? 20 : 32;
-		if ( strlen( $this->key ) > $max_length ) {
-			throw new \LengthException(
-				esc_html( "The \"{$this->key}\" key exceeds {$max_length} characters." )
-			);
-		}
+	protected function sanitize_key() {
 		if ( sanitize_key( $this->key ) !== $this->key ) {
 			throw new \UnexpectedValueException(
-				esc_html( "The \"{$this->key}\" is not valid. It must match the result of sanitize_key()." )
+				wp_kses_post( "The key \"{$this->key}\" is not valid. It must match the result of sanitize_key()." )
 			);
 		}
-
-		return $this->key;
 	}
 }

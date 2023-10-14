@@ -12,7 +12,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables\Metaboxes
+ * @package Plugins\PluginName\Registerables\Metaboxes
  * @author  Your Name <your-name@site.tld>
  */
 
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * - categories, tags, collections.
  *
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables\Metaboxes
+ * @package Plugins\PluginName\Registerables\Metaboxes
  * @author  Your Name <your-name@site.tld>
  */
 class Image_Upload_Metabox extends Base_Metabox {

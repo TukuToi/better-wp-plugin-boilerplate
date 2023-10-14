@@ -6,7 +6,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Vendor
+ * @package Plugins\PluginName
  * @author  Your Name <your-name@site.tld>
  */
 
@@ -28,6 +28,7 @@ namespace Company\Plugins\PluginName;
 use Company\Plugins\PluginName\Registerables\CPT\Item_CPT;
 use Company\Plugins\PluginName\Registerables\MetaBoxes\Image_Upload_Metabox;
 use Company\Plugins\PluginName\Registerables\Taxonomies\Collection_Taxonomy;
+use Company\Plugins\PluginName\Registerables\Shortcodes\Example_Shortcode;
 
 /**
  * Exit the code if this file is accessed directly
@@ -42,3 +43,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 ( new Item_CPT() )->register();
 ( new Image_Upload_Metabox() )->register();
 ( new Collection_Taxonomy() )->register();
+( new Example_Shortcode() )->register();

@@ -12,7 +12,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables\Metaboxes
+ * @package Plugins\PluginName\Registerables\Metaboxes
  * @author  Your Name <your-name@site.tld>
  */
 
@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Base Metabox class provides abstracts and methods to register a new Metabox.
  *
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables\Metaboxes
+ * @package Plugins\PluginName\Registerables\Metaboxes
  * @author  Your Name <your-name@site.tld>
  */
 abstract class Base_Metabox extends Base_WP_Registerable {
@@ -91,6 +91,26 @@ abstract class Base_Metabox extends Base_WP_Registerable {
 	 * @return array
 	 */
 	abstract public function render(): void;
+
+	/**
+	 * Validate the key
+	 *
+	 * Validate $key for get_key().
+	 *
+	 * @since 1.0.0 Introduced on 2023-10-08 16:30
+	 * @author Beda Schmid <beda@tukutoi.com>
+	 * @throws \LengthException If the key length validation fails.
+	 * @throws \UnexpectedValueException If the key sanitization fails.
+	 * @return string The validated string.
+	 */
+	protected function validate_key(): string {
+		if ( empty( $this->key ) ) {
+			$this->set_key();
+			$this->sanitize_key();
+		}
+
+		return $this->key;
+	}
 
 	/**
 	 * Register Metabox

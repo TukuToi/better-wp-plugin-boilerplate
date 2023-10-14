@@ -12,7 +12,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables\Taxonomies
+ * @package Plugins\PluginName\Registerables\Taxonomies
  * @author  Your Name <your-name@site.tld>
  */
 
@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * This specialised class registers a new custom "Collection" Taxonomy.
  *
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Registerables\Taxonomies
+ * @package Plugins\PluginName\Registerables\Taxonomies
  * @author  Your Name <your-name@site.tld>
  */
 final class Collection_Taxonomy extends Base_Taxonomy {

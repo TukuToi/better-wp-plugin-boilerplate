@@ -15,6 +15,8 @@ return array(
     'Company\\Plugins\\PluginName\\Registerables\\CPT\\Item_CPT' => $baseDir . '/src/src/registerables/cpt/class-item-cpt.php',
     'Company\\Plugins\\PluginName\\Registerables\\MetaBoxes\\Image_Upload_Metabox' => $baseDir . '/src/src/registerables/metaboxes/class-image-upload-metabox.php',
     'Company\\Plugins\\PluginName\\Registerables\\Metaboxes\\Base_Metabox' => $baseDir . '/src/src/registerables/metaboxes/class-base-metabox.php',
+    'Company\\Plugins\\PluginName\\Registerables\\Shortcodes\\Base_Shortcode' => $baseDir . '/src/src/registerables/shortcodes/class-base-shortcode.php',
+    'Company\\Plugins\\PluginName\\Registerables\\Shortcodes\\Example_Shortcode' => $baseDir . '/src/src/registerables/shortcodes/class-example-shortcode.php',
     'Company\\Plugins\\PluginName\\Registerables\\Taxonomies\\Base_Taxonomy' => $baseDir . '/src/src/registerables/taxonomies/class-base-taxonomy.php',
     'Company\\Plugins\\PluginName\\Registerables\\Taxonomies\\Collection_Taxonomy' => $baseDir . '/src/src/registerables/taxonomies/class-collection-taxonomy.php',
     'Company\\Plugins\\PluginName\\Utilities\\WP_Filesystem_Utility' => $baseDir . '/src/src/utilities/class-wp-filesystem-utility.php',

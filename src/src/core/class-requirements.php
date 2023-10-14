@@ -12,7 +12,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Vendor
+ * @package Plugins\PluginName\Core
  * @author  Your Name <your-name@site.tld>
  */
 
@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Defines the callbacks for Requirements checks
  *
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Vendor
+ * @package Plugins\PluginName\Core
  * @author  Your Name <your-name@site.tld>
  */
 class Requirements {

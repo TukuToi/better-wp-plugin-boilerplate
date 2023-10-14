@@ -11,7 +11,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Vendor
+ * @package Plugins\PluginName\Tests
  * @author  Your Name <your-name@site.tld>
  */
 

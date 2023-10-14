@@ -12,7 +12,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Utilities
+ * @package Plugins\PluginName\Utilities
  * @author  Your Name <your-name@site.tld>
  */
 
@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Provides a wrapper for the WP Filesystem.
  *
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Utilities
+ * @package Plugins\PluginName\Utilities
  * @author  Your Name <your-name@site.tld>
  */
 class WP_Filesystem_Utility {

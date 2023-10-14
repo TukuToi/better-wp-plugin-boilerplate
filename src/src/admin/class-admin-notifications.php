@@ -12,7 +12,7 @@
  *
  * @link    https://site.tld
  * @since   1.0.0 Introduced on 2023-08-01 15:30
- * @package Company\Plugins\PluginName\Vendor
+ * @package Plugins\PluginName\Admin
  * @author  Your Name <your-name@site.tld>
  */
 
@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Includes appropriate escaping.
  *
  * @since      1.0.0 Introduced on 2023-08-02 14:14
- * @package    Plugin_Name
+ * @package    Plugins\PluginName\Admin
  * @author     Your Name <your-name@site.tld>
  */
 class Admin_Notifications {
