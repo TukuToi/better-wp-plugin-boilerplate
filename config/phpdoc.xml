@@ -8,7 +8,7 @@
     <api format="php">
       <source dsn="..">
         <!--1 or more repetitions:-->
-        <path>src</path>
+        <path>src/src</path>
       </source>
 	  <ignore hidden="true" symlinks="true">
         <!--1 or more repetitions:-->
@@ -18,8 +18,6 @@
       <extensions>
         <!--1 or more repetitions:-->
         <extension>php</extension>
-		<extension>css</extension>
-		<extension>js</extension>
       </extensions>
 	  <default-package-name>Plugins</default-package-name>
       <include-source>true</include-source>
@@ -34,6 +32,7 @@
     </guide>
   </version>
   <setting name="guides.enabled" value="true"/>
+  <setting name="graphs.enabled" value="true"/>
   <!-- <template name="documentation-templates/data/templates/your-template"/> -->
   <title>Documentation</title>
 </phpdocumentor>
