@@ -36,7 +36,7 @@ For detailed documentation on the Plugin usage and Development processes, please
 
 _Until Wiki is online_
 - to manage and release a plugin with this repo/clone of
-    - clone/fork this entire repo
+    - clone/fork this entire repo. Make sure to give the repo the exact name you will want for your _plugin_ (such as `my-awesome-plugin`). The release workflows will use that to zip up your built releases.
 	- your _plugin_ will be whatever is inside the root `src` folder. The rest of the root content is NOT part of your plugin, but part of your dev env and workflow
     - develop your plugin by making changes to anything inside the root `src` folder
 	- if you need other dependencies add them to the composer file, remove composer lock, and run `composer install`
