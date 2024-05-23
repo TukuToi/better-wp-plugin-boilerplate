@@ -34,15 +34,7 @@ jobs:
         coverage: xdebug
 
     - name: Install Composer Dependencies
-      run: composer install --no-dev --optimize-autoloader
-
-    - name: List Composer Files (Debug)
-      run: ls -R vendor/composer
-
-    - name: Modify Autoloader Paths
-      run: |
-        sed -i 's|/src/src/|/src/|g' vendor/composer/autoload_classmap.php
-        sed -i 's|/src/src/|/src/|g' vendor/composer/autoload_static.php
+      run: composer install --no-dev --optimize-autoloader --verbose
 
     - name: Install PHPUnit
       run: composer global require --dev phpunit/phpunit:^9.0 
