@@ -40,4 +40,5 @@ intermediate
 .idea
 cache
 .vscode
-
+/vendor
+/src/vendor
