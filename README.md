@@ -34,6 +34,27 @@ This repository is not a Plugin you can download and install. The Plugin files i
 
 For detailed documentation on the Plugin usage and Development processes, please refer to the [Wiki](https://github.com/TukuToi/better-wp-plugin-boilerplate/wiki).
 
+_Until Wiki is online_
+- to manage and release a plugin with this repo/clone of
+    - clone/fork this entire repo
+	- your _plugin_ will be whatever is inside the root `src` folder. The rest of the root content is NOT part of your plugin, but part of your dev env and workflow
+    - develop your plugin by making changes to anything inside the root `src` folder
+	- if you need other dependencies add them to the composer file, remove composer lock, and run `composer install`
+	- push any changes you make to your `develop` branch
+	- this will trigger the wpcs and phpunit workflows, which when passed, allow you to
+	- merge your changes to your release branch (typicall `main`)
+	- then checkout `main` locally, switch to that branch, and in the CLI run the interactive `/bin/git_release.sh` script
+	- this will prompt you a few details and then release your _plugin_ to a new Tag, where an asset will be added that holds your built _plugin_
+
+==> You do NOT need to zip things manually, or run autoloader locally, as the workflows will do that all for you
+
+==> IF you run autoloader manually locally to maybe test your plugin, keep in mind to search-replace the `/src/src/` > `/src/` in the `/src/vendor/composer` files to guarantee no errors. _This step is done for you if you use the release workflow_.
+
+
+Of course, if this is all too much for you, feel free to just extract `src` contents and use that as your repo, this is entirely up to you.
+
+==> `/bin` includes other helpful scripts to generate documentation of your _plugin_ as well as convert documents from a to another format
+
 # Credits
 
 *This credits section is only here to honor the origins of the repository, as it is a hard-fork. The code has been 100% rewamped from the original.*
