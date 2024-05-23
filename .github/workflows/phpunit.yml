@@ -33,6 +33,14 @@ jobs:
         extensions: mbstring, dom, fileinfo, mysql # Adjust to your project's needs
         coverage: xdebug
 
+    - name: Install dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+    - name: Modify Autoloader Paths
+      run: |
+        sed -i 's|/src/src/|/src/|g' vendor/composer/autoload_classmap.php
+        sed -i 's|/src/src/|/src/|g' vendor/composer/autoload_static.php
+
     - name: Install PHPUnit
       run: composer global require --dev phpunit/phpunit:^9.0 
 
