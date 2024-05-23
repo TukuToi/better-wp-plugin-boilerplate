@@ -36,6 +36,9 @@ jobs:
     - name: Install Composer Dependencies
       run: composer install --no-dev --optimize-autoloader
 
+    - name: List Composer Files (Debug)
+      run: ls -R vendor/composer
+
     - name: Modify Autoloader Paths
       run: |
         sed -i 's|/src/src/|/src/|g' vendor/composer/autoload_classmap.php
