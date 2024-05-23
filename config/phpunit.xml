@@ -17,5 +17,4 @@
         <env name="WP_TESTS_DIR" value="${WP_TESTS_DIR}"/>
 		<env name="WP_PLUGIN_SLUG" value="peakprosperity-deploy-control"/>
     </php>
-
 </phpunit>
