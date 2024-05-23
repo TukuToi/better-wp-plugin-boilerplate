@@ -1,5 +1,10 @@
 # Changelog
 
+## 2024-05-23
+- [Removed] Vendor Folder
+- [Added] Vendor folder to gitignore
+- [Updated] release.yml with proper composer autoloader step and renaming
+
 ## 2023-10-11
 - v5-alpha update
 

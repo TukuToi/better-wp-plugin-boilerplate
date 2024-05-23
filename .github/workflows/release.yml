@@ -15,10 +15,15 @@ jobs:
           php-version: '8.2.11'
           tools: composer
 
+      - name: Install dependencies
+        run: composer install --no-dev --optimize-autoloader
+
       - name: Build release package
         run: |
           mkdir plugin-name
           cp -R src/* plugin-name/
+          sed -i 's|/src/src/|/src/|g' plugin-name/vendor/composer/autoload_classmap.php
+          sed -i 's|/src/src/|/src/|g' plugin-name/vendor/composer/autoload_static.php
           zip -r plugin-name.zip plugin-name/
 
       - name: Get the version

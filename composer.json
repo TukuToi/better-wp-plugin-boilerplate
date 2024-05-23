@@ -4,7 +4,7 @@
     "type": "project",
     "license": "GPL-3.0-or-later",
     "autoload": {
-        "classmap": ["src/src/"]
+        "classmap": ["src/src"]
     },
 	"config": {
         "vendor-dir": "src/vendor"
