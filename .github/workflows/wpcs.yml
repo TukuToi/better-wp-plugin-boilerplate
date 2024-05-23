@@ -10,6 +10,8 @@ jobs:
   wpcs:
     name: WPCS Scan
     runs-on: ubuntu-latest
+    env:
+      REPO_NAME: ${{ github.event.repository.name }}
 
     steps:
       - name: Checkout code
@@ -33,4 +35,4 @@ jobs:
 
       - name: Run WPCS
         run: |
-          ~/.composer/vendor/bin/phpcs --standard=WordPress src/resources/* src/src/* src/index.php src/plugin-name.php --report=checkstyle | cs2pr
+          ~/.composer/vendor/bin/phpcs --standard=WordPress src/resources/* src/src/* src/index.php src/$REPO_NAME.php --report=checkstyle | cs2pr
