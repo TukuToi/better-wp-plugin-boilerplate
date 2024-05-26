@@ -75,7 +75,7 @@ class WP_Filesystem_Utility {
 
 		if ( null === self::$filesystem ) {
 
-			WP_Filesystem();
+			\WP_Filesystem();
 			self::$filesystem = new WP_Filesystem_Direct( true );
 		}
 
