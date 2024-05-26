@@ -70,7 +70,7 @@ class Admin_Notifications {
 	public static function print_requirement_notice(): void {
 
 		$notice = ( WP_Filesystem_Utility::get_filesystem() )
-			->get_contents( Config::get( 'plugin_dir' ) . 'resources/admin-requirements-notice.php' );
+			->get_contents( Config::get( 'plugin_dir' ) . 'resources/admin-requirements-notice.html' );
 		printf(
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			$notice,

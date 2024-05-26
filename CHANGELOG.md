@@ -1,5 +1,9 @@
 # Changelog
 
+## ## 2024-05-26
+- [Fixed] Properly initialise WP_Filesystem
+- [Fixed] Use HTML file extension for resouurce files
+
 ## 2024-05-23
 - [Removed] Vendor Folder
 - [Added] Vendor folder to gitignore
