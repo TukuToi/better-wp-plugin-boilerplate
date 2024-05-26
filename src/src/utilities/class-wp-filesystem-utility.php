@@ -75,8 +75,9 @@ class WP_Filesystem_Utility {
 
 		if ( null === self::$filesystem ) {
 
+			require_once \ABSPATH . 'wp-admin/includes/file.php';
 			\WP_Filesystem();
-			self::$filesystem = new WP_Filesystem_Direct( true );
+			self::$filesystem = new \WP_Filesystem_Direct( true );
 		}
 
 		return self::$filesystem;
