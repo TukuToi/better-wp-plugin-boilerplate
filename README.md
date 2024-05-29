@@ -37,6 +37,7 @@ For detailed documentation on the Plugin usage and Development processes, please
 _Until Wiki is online_
 - to manage and release a plugin with this repo/clone of
     - clone/fork this entire repo. Make sure to give the repo the exact name you will want for your _plugin_ (such as `my-awesome-plugin`). The release workflows will use that to zip up your built releases.
+	- src/replace all strings that are placeholders
 	- your _plugin_ will be whatever is inside the root `src` folder. The rest of the root content is NOT part of your plugin, but part of your dev env and workflow
     - develop your plugin by making changes to anything inside the root `src` folder
 	- if you need other dependencies add them to the composer file, remove composer lock, and run `composer install`
@@ -50,10 +51,12 @@ _Until Wiki is online_
 
 ==> IF you run autoloader manually locally to maybe test your plugin, keep in mind to search-replace the `/src/src/` > `/src/` in the `/src/vendor/composer` files to guarantee no errors. _This step is done for you if you use the release workflow_.
 
-
 Of course, if this is all too much for you, feel free to just extract `src` contents and use that as your repo, this is entirely up to you.
 
-==> `/bin` includes other helpful scripts to generate documentation of your _plugin_ as well as convert documents from a to another format
+==> `/bin` includes other helpful scripts to generate documentation of your _plugin_ as well as convert documents from a to another format or build a local copy of the plugin (useful for testing ;)
+
+==> If running into 403 errors when releasing, make sure workflows have write permission on your repo
+==> if you .sh files return a permission error, run `chmod +x {FILE}.sh`
 
 # Credits
 

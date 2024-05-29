@@ -4,21 +4,6 @@ All notable changes to _this project_ will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 2024-05-29
-- [Added]: New paths in the release workflow file
-- [Added]: Additional properties and methods to Base_Metabox class for better flexibility 
-- [Changed]: Updated minimum PHP version requirement to 8.0.0
-- [Changed]: Updated minimum WordPress version requirement to 4.0
-- [Changed]: Refactored how metaboxes are registered and saved, improving code clarity 
-- [Changed]: Renamed keys for shortcodes, taxonomies, and custom post types using a configurable slug
-- [Changed]: Replaced specific metabox class with a more generic example 
-- [Fixed]: Incorrect author information in several files
-- [Removed]: Unused function imports across multiple files
-
-## ## 2024-05-26
-- [Fixed] Properly initialise WP_Filesystem
-- [Fixed] Use HTML file extension for resouurce files
-
 This is NOT the changelog of the WordPress Plugin you ultimately develop!
 
 ## [v5-alpha] - 2024-05-29
@@ -26,6 +11,7 @@ This is NOT the changelog of the WordPress Plugin you ultimately develop!
 ### Added
 - New paths in the release workflow file.
 - Additional properties and methods to Base_Metabox class for better flexibility.
+- New .sh script to build local release.
 
 ### Changed
 - Updated minimum PHP version requirement to 8.0.0.
