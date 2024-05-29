@@ -18,13 +18,15 @@ This is NOT the changelog of the WordPress Plugin you ultimately develop!
 - Updated minimum WordPress version requirement to 4.0.
 - Refactored how metaboxes are registered and saved, improving code clarity .
 - Renamed keys for shortcodes, taxonomies, and custom post types using a configurable slug.
-- Replaced specific metabox class with a more generic example .
+- Replaced specific metabox class with a more generic example.
+- Refactored Test Cases.
 
 ### Removed 
 - Unused function imports across multiple files.
 
 ### Fixed
 - Incorrect author information in several files.
+- Require `wp-admin/includes/file.php` if WP_Filesystem is unavailable.
 
 ## [v5-alpha] - 2024-05-26
 
