@@ -62,7 +62,7 @@ final class Item_CPT extends Base_CPT {
 	 * @return void
 	 */
 	protected function set_key(): void {
-		$this->key = 'item';
+		$this->key = Config::get( 'slug' ) . '-item';
 	}
 
 	/**
@@ -78,7 +78,7 @@ final class Item_CPT extends Base_CPT {
 	protected function set_specific_args(): array {
 		return array(
 			'menu_position' => 1,
-			'taxonomies'    => array( 'collection' ),
+			'taxonomies'    => array( Config::get( 'slug' ) . '-collection' ),
 			'menu_icon'     => 'data:image/svg+xml;base64,' . ( new WP_Filesystem_Utility() )
 				->get_base64_encoded_contents( Config::get( 'plugin_dir' ) . 'public/icons/cpt-icon.svg' ),
 		);

@@ -2,7 +2,7 @@
 Contributors: user.a,user.b
 Donate link: https://domain.tld/donate
 Tags: tag-1,tag-2
-Requires at least: X.X
+Requires at least: 4.0
 Tested up to: X.X
 Stable tag: 1.0.0
 License: GPL-3.0-or-later

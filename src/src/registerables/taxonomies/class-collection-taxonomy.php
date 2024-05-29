@@ -31,6 +31,7 @@ declare( strict_types = 1 );
 namespace Company\Plugins\PluginName\Registerables\Taxonomies;
 
 use Company\Plugins\PluginName\Registerables\Taxonomies\Base_Taxonomy;
+use Company\Plugins\PluginName\Core\Config;
 
 /**
  * Exit the code if this file is accessed directly
@@ -60,7 +61,7 @@ final class Collection_Taxonomy extends Base_Taxonomy {
 	 * @return void
 	 */
 	protected function set_key(): void {
-		$this->key = 'collection';
+		$this->key = Config::get( 'slug' ) . '-collection';
 	}
 
 	/**
@@ -105,7 +106,7 @@ final class Collection_Taxonomy extends Base_Taxonomy {
 	 */
 	protected function set_object_types(): array {
 		return array(
-			'item',
+			Config::get( 'slug' ) . '-item',
 		);
 	}
 }

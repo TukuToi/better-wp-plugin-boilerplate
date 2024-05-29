@@ -30,8 +30,8 @@
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
  * Author:            Ideally, your WordPress forum username.
- * Requires at least: X.X
- * Requires PHP:      X.X
+ * Requires at least: 4.0
+ * Requires PHP:      8.0.0
  * Tested up to:      X.X
  * Author URI:        https://site.tld/author-name-uri/
  * License:           GPL-3.0-or-later
@@ -56,13 +56,6 @@ declare( strict_types = 1 );
 namespace Company\Plugins\PluginName;
 
 use Company\Plugins\PluginName\Core\{Config, Requirements, Lifecycle};
-use function add_action;
-use function deactivate_plugins;
-use function current_user_can;
-use function plugin_basename;
-use function register_activation_hook;
-use function register_deactivation_hook;
-use function register_uninstall_hook;
 
 /**
  * Exit the code if this file is accessed directly
@@ -98,7 +91,7 @@ require_once 'vendor/autoload.php';
 Config::init(
 	array(
 		'version'          => '1.0.0',
-		'requires_php'     => '7.4.0',
+		'requires_php'     => '8.0.0',
 		'requires_os'      => array(
 			'wp' => '6.0.0',
 			'cp' => '1.0.0',
@@ -134,8 +127,8 @@ $requirements = ( new Requirements() )
 
 if ( ! $requirements->met() ) {
 
-	require_once \ABSPATH . 'wp-includes/capabilities.php';
-	require_once \ABSPATH . 'wp-includes/pluggable.php';
+	require_once ABSPATH . 'wp-includes/capabilities.php';
+	require_once ABSPATH . 'wp-includes/pluggable.php';
 	if ( current_user_can( 'deactivate_plugins' ) ) {
 
 		unset( $_GET['activate'] );
@@ -147,7 +140,7 @@ if ( ! $requirements->met() ) {
 			)
 		);
 
-		require_once \ABSPATH . 'wp-admin/includes/plugin.php';
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		deactivate_plugins( array( Config::get( 'base_name' ) ), true );
 
 	}

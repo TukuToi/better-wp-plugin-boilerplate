@@ -26,7 +26,7 @@ declare( strict_types = 1 );
 namespace Company\Plugins\PluginName;
 
 use Company\Plugins\PluginName\Registerables\CPT\Item_CPT;
-use Company\Plugins\PluginName\Registerables\MetaBoxes\Image_Upload_Metabox;
+use Company\Plugins\PluginName\Registerables\MetaBoxes\Example_Metabox;
 use Company\Plugins\PluginName\Registerables\Taxonomies\Collection_Taxonomy;
 use Company\Plugins\PluginName\Registerables\Shortcodes\Example_Shortcode;
 
@@ -41,6 +41,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Initialise all services
  */
 ( new Item_CPT() )->register();
-( new Image_Upload_Metabox() )->register();
+( new Example_Metabox() )->register();
 ( new Collection_Taxonomy() )->register();
 ( new Example_Shortcode() )->register();

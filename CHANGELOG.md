@@ -1,99 +1,151 @@
 # Changelog
+All notable changes to _this project_ will be documented in this file.
 
-## ## 2024-05-26
-- [Fixed] Properly initialise WP_Filesystem
-- [Fixed] Use HTML file extension for resouurce files
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 2024-05-23
-- [Removed] Vendor Folder
-- [Added] Vendor folder to gitignore
-- [Updated] release.yml with proper composer autoloader step and renaming
+This is NOT the changelog of the WordPress Plugin you ultimately develop!
 
-## 2023-10-11
-- v5-alpha update
+## [v5-alpha] - 2024-05-29
 
-## 2023-08-01
-### Changed 
-- Use Constant instead of function for the plugin base name
-- Added License to main project
-- Updated readme with information on translation and minor fixes
-### HEADS UP
+### Added
+- New paths in the release workflow file.
+- Additional properties and methods to Base_Metabox class for better flexibility.
+
+### Changed
+- Updated minimum PHP version requirement to 8.0.0.
+- Updated minimum WordPress version requirement to 4.0.
+- Refactored how metaboxes are registered and saved, improving code clarity .
+- Renamed keys for shortcodes, taxonomies, and custom post types using a configurable slug.
+- Replaced specific metabox class with a more generic example .
+
+### Removed 
+- Unused function imports across multiple files.
+
+### Fixed
+- Incorrect author information in several files.
+
+## [v5-alpha] - 2024-05-26
+
+### Fixed
+
+- Properly initialise WP_Filesystem.
+- Use HTML file extension for resouurce files.
+
+## [v5-alpha] - 2024-05-23
+
+### Added
+- Vendor folder to gitignore.
+
+### Changed
+- release.yml with proper composer autoloader step and renaming.
+
+### Removed
+- Vendor Folder.
+
+## [v5-alpha] - 2023-10-11
+
+### Added
+- v5-alpha initial commit.
+
+## [4.0.1] - 2023-08-01
+
 This is the last release before a full refactor towards more modern approaches such as using namespaces and autoloader. This version (4.0.1) will not receive any further updates unless security fixes. Version 5.0.0 and upwards is the only actively supported version from today on.
 
 The new version 5.0.0 and upwards is NOT backwards compatible with prior versions.
 
+### Changed 
+- Use Constant instead of function for the plugin base name.
+- Added License to main project.
+- Updated readme with information on translation and minor fixes.
+
 ## 2023-07-01
+
 ### Changed
-- Small refactors to be more compliant with coding standards
-- Shortcode example does not default anymore to "pluginname + shortcodename" for the third parameter
-- Stricter array comparison
+
+- Small refactors to be more compliant with coding standards.
+- Shortcode example does not default anymore to "pluginname + shortcodename" for the third parameter.
+- Stricter array comparison.
+
 ### Fixed
-- Warning about optional parameter before required parameter (PHP 8)
+- Warning about optional parameter before required parameter (PHP 8).
 
 ## 2022-02-19
+
 ### Changed
 - Removed uninstall hook with class again in favour of uninstall.php file. Peformance issues with uninstall hook never resolved in Core are the reason.
 - Updated Header tags to be more dynamic for Generate Plugin features, does not affect functionality.
 - Updated prefixes of global functions for better replacement with Generate Plugin Features. Does not affect functionality.
+
 ### Fixed
 - Issue where activation and deactivation could have thrown notices due to undefined indexes.
 
 ## 2021-09-15
+
 ### Changed
-- Removed uninstall.php file and added uninstall hook with class instead. Allows for dynamic plugin name retrieval during unistall
-- Added SonarCloud Scanning for code quality
+- Removed uninstall.php file and added uninstall hook with class instead. Allows for dynamic plugin name retrieval during unistall.
+- Added SonarCloud Scanning for code quality.
 
 ## 2021-08-09
-### Fixed
-- Fixed problem where plugin couldn't be activated in bulk
-- Fixed problem where plugin couldn't be deactivated in bulk
+
 ### Added
-- Proper PHP Headings (`Requires at least:` and `Tested up to:`)
+- Proper PHP Headings (`Requires at least:` and `Tested up to:`).
+
+### Fixed
+- Fixed problem where plugin couldn't be activated in bulk.
+- Fixed problem where plugin couldn't be deactivated in bulk.
 
 ## 2021-07-24
-### Fixed
-- Fixed wrong usage of deactivate-plugin_ wp_nonce prefix instead of activate-plugin_
-- Fixed wrong usage shortcode prefix when registering shortcode. Props @anwas, https://github.com/TukuToi/better-wp-plugin-boilerplate/pull/6
+
 ### Added 
-- Added complete ShortCode example
-### Fixed 
-- use https instead of https in placeholder
-- fixed some dummy placeholders to work with the TukuToi Plugin Generator
-- updated "Tested up to" version
+- Added complete ShortCode example.
+
+### Fixed
+- Fixed wrong usage of deactivate-plugin_ wp_nonce prefix instead of `activate-plugin_`.
+- Fixed wrong usage shortcode prefix when registering shortcode. Props @anwas, https://github.com/TukuToi/better-wp-plugin-boilerplate/pull/6.
+- use https instead of https in placeholder.
+- fixed some dummy placeholders to work with the TukuToi Plugin Generator.
+- updated "Tested up to" version.
 
 
 ## 2021-07-14
+
 ### Changed
-- Use Strict comparison instead of loose comparison
-- Some alignement of signs fixed to satisfy PHPCS GitHub action
-- Verify WP Nonce when deactivating a Plugin
-- Some space alignements in multiline conditions adjusted
+- Use Strict comparison instead of loose comparison.
+- Some alignement of signs fixed to satisfy PHPCS GitHub action.
+- Verify WP Nonce when deactivating a Plugin.
+- Some space alignements in multiline conditions adjusted.
 
 ## 2021-07-9
+
 ### Added
-- PHPCS and WPCS GitHub Actions (to the main repo)
-- Updated readme of main repo
+- PHPCS and WPCS GitHub Actions (to the main repo).
+- Updated readme of main repo.
 
 ## 2021-07-6
+
 ### Added
 - Added ability to remove actions and filters added by the plugin.
 - Added unique plugin prefix used to prefix technical functions.
 
 ## 2021-07-5
+
+### Added
+- Added new ShortCode handler to work just like the add action and add filter handlers of WPPB.
+- added @param $hook_suffix to admin_enqueue_scripts callbacks.
+
 ### Changed
 - Updated Readme.md.
 - Updated all files to follow 100% WPCS.
 - Updated empty index.php files to include a meaningful and WPCS compliant comment.
 - Updated readme with proper example how to add larger code chunks to Plugin Readme.
-- Updated JS files comments to use `$( window ).on('load', function() {` instead of shorthand `$( window ).load(function() {`
+- Updated JS files comments to use `$( window ).on('load', function() {` instead of shorthand `$( window ).load(function() {`.
 - Updated i18N class to i18n class so to be WPCS compliant.
-- Renamed functions outside of classes to be *prefixed* instead of *suffixed* with plugin_name, for compliance WP and codecanyon
-- Corrected some typos
-- Corrected Requires at least:, Tested up to: and Stable tag: in plugin readme.txt file
-### Added
-- Added new ShortCode handler to work just like the add action and add filter handlers of WPPB
-- added @param $hook_suffix to admin_enqueue_scripts callbacks.
+- Renamed functions outside of classes to be *prefixed* instead of *suffixed* with plugin_name, for compliance WP and codecanyon.
+- Corrected some typos.
+- Corrected Requires at least:, Tested up to: and Stable tag: in plugin readme.txt file.
 
+## Legacy (Pre TukuToi)
 
 * (3 July 2015). Flattened the folder structure so there is no .org repo parent folder.
 * (4 September 2014). Updating the `README` with Windows symbolic link instructions.

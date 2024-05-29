@@ -30,9 +30,6 @@ declare( strict_types = 1 );
  */
 namespace Company\Plugins\PluginName\Utilities;
 
-use WP_Filesystem_Direct;
-use base64_encode;
-
 /**
  * Exit the code if this file is accessed directly
  */
@@ -75,8 +72,7 @@ class WP_Filesystem_Utility {
 
 		if ( null === self::$filesystem ) {
 
-			require_once \ABSPATH . 'wp-admin/includes/file.php';
-			\WP_Filesystem();
+			WP_Filesystem();
 			self::$filesystem = new \WP_Filesystem_Direct( true );
 		}
 

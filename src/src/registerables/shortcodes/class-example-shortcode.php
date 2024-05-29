@@ -21,6 +21,7 @@ declare( strict_types = 1 );
 namespace Company\Plugins\PluginName\Registerables\Shortcodes;
 
 use Company\Plugins\PluginName\Registerables\Shortcodes\Base_Shortcode;
+use Company\Plugins\PluginName\Core\Config;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -63,7 +64,7 @@ final class Example_Shortcode extends Base_Shortcode {
 	 * @return void
 	 */
 	protected function set_key(): void {
-		$this->key = 'example';
+		$this->key = Config::get( 'slug' ) . '-example';
 	}
 
 	/**

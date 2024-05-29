@@ -26,6 +26,7 @@ jobs:
           cp -R src/* $REPO_NAME/
           sed -i 's|/src/src/|/src/|g' $REPO_NAME/vendor/composer/autoload_classmap.php
           sed -i 's|/src/src/|/src/|g' $REPO_NAME/vendor/composer/autoload_static.php
+          sed -i 's|/../../..|/../..|g' $REPO_NAME/vendor/composer/autoload_static.php
           zip -r $REPO_NAME.zip $REPO_NAME/
 
       - name: Get the version

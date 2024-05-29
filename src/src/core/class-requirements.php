@@ -31,13 +31,6 @@ declare(strict_types=1);
  */
 namespace Company\Plugins\PluginName\Core;
 
-use function get_bloginfo;
-use function get_option;
-use function get_site_option;
-use function get_template;
-use function is_multisite;
-use function is_plugin_active;
-
 /**
  * Exit the code if this file is accessed directly
  */
