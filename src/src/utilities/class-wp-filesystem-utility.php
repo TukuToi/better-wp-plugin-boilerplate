@@ -72,6 +72,9 @@ class WP_Filesystem_Utility {
 
 		if ( null === self::$filesystem ) {
 
+			if ( ! function_exists( 'WP_Filesystem' ) ) {
+				require_once 'wp-admin/includes/file.php';
+			}
 			WP_Filesystem();
 			self::$filesystem = new \WP_Filesystem_Direct( true );
 		}
