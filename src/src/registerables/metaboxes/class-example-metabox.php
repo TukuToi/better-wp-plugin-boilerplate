@@ -66,7 +66,7 @@ class Example_Metabox extends Base_Metabox {
 	 */
 	protected function initialize_properties(): void {
 
-		$this->post_types = array( 'post', 'page', 'item' );
+		$this->post_types = array( 'post', 'page', Config::get( 'slug' ) . '-item' );
 		$this->context    = array(
 			'post' => 'side',
 			'page' => 'normal',

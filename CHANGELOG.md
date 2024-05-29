@@ -27,6 +27,8 @@ This is NOT the changelog of the WordPress Plugin you ultimately develop!
 ### Fixed
 - Incorrect author information in several files.
 - Require `wp-admin/includes/file.php` if WP_Filesystem is unavailable.
+- Save Metabox loop now continues to next post type instead of immediately exiting process.
+- Custom Post Types are now properly prefixed and checked on save.
 
 ## [v5-alpha] - 2024-05-26
 

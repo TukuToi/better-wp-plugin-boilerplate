@@ -286,7 +286,7 @@ abstract class Base_Metabox extends Base_WP_Registerable {
 				|| $post_type !== $_POST['post_type']
 				|| ! current_user_can( 'edit_post', $post_id )
 			) {
-				return;
+				continue;
 			}
 
 			if ( isset( $_POST[ $this->get_key() ] ) ) {
