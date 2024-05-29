@@ -64,7 +64,7 @@ class Admin_Notifications {
 	 * reviewers: phpcs:ignore is used deterministically because GitHub WPCS Workflow fails otherwise.
 	 *
 	 * @since  1.0.0 Introduced on 2023-08-02 15:14
-	 * @author Beda Schmid <beda@tukutoi.com>
+	 * @author Your Name <your-name@site.tld>
 	 * @return void
 	 */
 	public static function print_requirement_notice(): void {

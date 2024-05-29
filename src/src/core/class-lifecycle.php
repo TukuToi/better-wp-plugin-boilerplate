@@ -32,7 +32,6 @@ declare( strict_types = 1 );
 namespace Company\Plugins\PluginName\Core;
 
 use Company\Plugins\PluginName\Core\Config;
-use function current_user_can;
 
 /**
  * Exit the code if this file is accessed directly
